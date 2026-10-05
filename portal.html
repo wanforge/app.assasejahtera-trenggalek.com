@@ -17,18 +17,18 @@
       theme: {
         extend: {
           colors: {
-            brand: {
-              50: '#ecfdf5',
-              100: '#d1fae5',
-              200: '#a7f3d0',
-              300: '#6ee7b7',
-              400: '#34d399',
-              500: '#10b981',
-              600: '#059669',
-              700: '#047857',
-              800: '#065f46',
-              900: '#064e3b',
-              950: '#022c22'
+            corporate: {
+              50: '#f8fafc',
+              100: '#f1f5f9',
+              200: '#e2e8f0',
+              300: '#cbd5e1',
+              400: '#94a3b8',
+              500: '#64748b',
+              600: '#475569',
+              700: '#334155',
+              800: '#1e293b',
+              900: '#0f172a',
+              950: '#020617'
             }
           }
         }
@@ -36,100 +36,128 @@
     }
   </script>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
-    body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background-color: #f8fafc;
+      color: #1e293b;
+    }
+    .font-mono-code { font-family: 'JetBrains Mono', monospace; }
     .section-anchor { scroll-margin-top: 5rem; }
   </style>
 </head>
-<body class="bg-slate-50 text-slate-800 antialiased selection:bg-brand-600 selection:text-white flex flex-col min-h-screen">
+<body class="min-h-screen flex flex-col justify-between antialiased selection:bg-slate-800 selection:text-white">
+
+  <!-- Top Utility Strip -->
+  <aside aria-label="Informasi Lembaga" class="bg-corporate-900 text-corporate-300 text-[11px] border-b border-corporate-800 py-1.5 px-4 sm:px-6">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-1.5">
+      <div class="flex items-center gap-2 text-center sm:text-left">
+        <span class="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+        <span class="font-medium text-slate-200">PT. ASSA SEJAHTERA TRENGGALEK</span>
+        <span class="text-corporate-500 hidden sm:inline">•</span>
+        <span class="hidden sm:inline">Penyedia Tenaga Kerja &amp; Manajemen SDM Terdaftar (Sejak 2020)</span>
+      </div>
+      <div class="flex items-center gap-3 text-[11px]">
+        <span>Hubungi: <strong>0878-6547-7388</strong></span>
+        <span class="text-corporate-500">•</span>
+        <a href="index.html" class="text-white hover:underline">Status Pemeliharaan &rarr;</a>
+      </div>
+    </div>
+  </aside>
 
   <!-- Header -->
-  <header class="sticky top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur-md">
-    <div class="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
-      <a href="#beranda" class="flex items-center gap-3">
-        <span class="grid h-10 w-10 place-items-center rounded-xl bg-brand-600 text-sm font-extrabold tracking-tight text-white shadow-sm">AST</span>
+  <header class="sticky top-0 z-50 border-b border-corporate-200 bg-white/95 backdrop-blur-md shadow-2xs">
+    <div class="mx-auto flex h-18 max-w-6xl items-center justify-between px-4 sm:px-6">
+      <a href="#beranda" class="flex items-center gap-3 py-3">
+        <div class="h-10 w-10 rounded-lg bg-corporate-900 text-white flex items-center justify-center font-extrabold text-sm tracking-tight border border-corporate-800 shadow-sm">
+          AST
+        </div>
         <div>
-          <span class="block text-sm font-extrabold tracking-tight text-slate-900 sm:text-base leading-tight">Assa Sejahtera</span>
-          <span class="block text-[11px] font-medium text-slate-500">Trenggalek, Jawa Timur</span>
+          <span class="block text-sm sm:text-base font-extrabold tracking-tight text-corporate-900 leading-tight">
+            PT. Assa Sejahtera Trenggalek
+          </span>
+          <span class="block text-xs font-medium text-corporate-500">
+            Lembaga Penempatan Tenaga Kerja &amp; Manajemen SDM
+          </span>
         </div>
       </a>
-      <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-600">
-        <a href="#tentang" class="hover:text-slate-900 transition">Tentang Kami</a>
-        <a href="#layanan" class="hover:text-slate-900 transition">Layanan SDM</a>
-        <a href="#kepatuhan" class="hover:text-slate-900 transition">Kepatuhan &amp; Legal</a>
-        <a href="#kontak" class="hover:text-slate-900 transition">Kontak Kantor</a>
+      <nav class="hidden md:flex items-center gap-6 text-xs font-semibold text-corporate-600 uppercase tracking-wider">
+        <a href="#tentang" class="hover:text-corporate-950 transition">Tentang Kami</a>
+        <a href="#layanan" class="hover:text-corporate-950 transition">Pilar Layanan</a>
+        <a href="#kepatuhan" class="hover:text-corporate-950 transition">Kepatuhan Hukum</a>
+        <a href="#kontak" class="hover:text-corporate-950 transition">Kontak Kantor</a>
       </nav>
       <div class="flex items-center gap-3">
-        <a href="https://wa.me/6287865477388" target="_blank" rel="noopener noreferrer" class="rounded-xl bg-brand-600 px-4 py-2 text-xs font-semibold text-white shadow-sm hover:bg-brand-700 transition">
-          Konsultasi SDM
+        <a href="https://wa.me/6287865477388" target="_blank" rel="noopener noreferrer" class="rounded bg-corporate-900 px-4 py-2 text-xs font-semibold text-white shadow-2xs hover:bg-corporate-800 transition">
+          Konsultasi Rekrutmen
         </a>
       </div>
     </div>
   </header>
 
   <!-- Hero Section -->
-  <section id="beranda" class="relative overflow-hidden pt-14 pb-18 sm:pt-20 sm:pb-24 border-b border-slate-200/80 bg-white">
-    <div class="mx-auto max-w-5xl px-4 sm:px-6 text-center">
-      <div class="inline-flex items-center gap-2 rounded-full border border-brand-200 bg-brand-50 px-3.5 py-1 text-xs font-semibold text-brand-800 mb-6">
-        <span class="h-2 w-2 rounded-full bg-brand-600"></span>
-        Agen Tenaga Kerja &amp; Manajemen SDM Terpercaya di Trenggalek
+  <section id="beranda" class="relative overflow-hidden pt-12 pb-16 sm:pt-18 sm:pb-22 border-b border-corporate-200 bg-white">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6 text-center">
+      <div class="inline-flex items-center gap-2 rounded border border-corporate-200 bg-corporate-50 px-3.5 py-1 text-xs font-semibold text-corporate-700 mb-6">
+        <span class="h-1.5 w-1.5 rounded-full bg-corporate-900"></span>
+        Mitra Ketenagakerjaan &amp; Pengelolaan SDM Terpercaya di Trenggalek
       </div>
-      <h1 class="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl max-w-4xl mx-auto leading-tight">
-        Solusi Ketenagakerjaan Terpadu &amp; Manajemen SDM Profesional
+      <h1 class="text-3xl font-extrabold tracking-tight text-corporate-900 sm:text-4xl lg:text-5xl max-w-3xl mx-auto leading-tight">
+        Penyedia Tenaga Kerja Profesional &amp; Tata Kelola SDM Handal
       </h1>
-      <p class="mt-6 text-base sm:text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
-        PT. Assa Sejahtera Trenggalek bergerak di bidang manajemen sumber daya manusia dan penyediaan tenaga kerja profesional dan handal. Berdiri sejak tahun 2020 dengan dukungan manajemen berpengalaman, berpusat di Kabupaten Trenggalek.
+      <p class="mt-5 text-sm sm:text-base text-corporate-600 max-w-2xl mx-auto leading-relaxed">
+        PT. Assa Sejahtera Trenggalek bergerak di bidang manajemen sumber daya manusia dan penyediaan tenaga kerja profesional. Berdiri sejak tahun 2020 dengan dukungan manajemen solid dan berpengalaman, berpusat di Kabupaten Trenggalek.
       </p>
-      <div class="mt-8 flex flex-wrap justify-center gap-4">
-        <a href="#layanan" class="rounded-xl bg-brand-600 px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-brand-700 transition">
-          Layanan Tenaga Kerja
+      <div class="mt-8 flex flex-wrap justify-center gap-3">
+        <a href="#layanan" class="rounded bg-corporate-900 px-6 py-2.5 text-xs sm:text-sm font-semibold text-white shadow-sm hover:bg-corporate-800 transition">
+          Jelajahi Layanan
         </a>
-        <a href="https://wa.me/6287865477388" target="_blank" rel="noopener noreferrer" class="rounded-xl border border-slate-200 bg-slate-50 px-6 py-3 text-sm font-semibold text-slate-700 hover:bg-slate-100 transition">
-          Hubungi 0878-6547-7388
+        <a href="https://wa.me/6287865477388" target="_blank" rel="noopener noreferrer" class="rounded border border-corporate-300 bg-corporate-50 px-6 py-2.5 text-xs sm:text-sm font-semibold text-corporate-700 hover:bg-corporate-100 transition">
+          Hubungi Kantor (0878-6547-7388)
         </a>
       </div>
     </div>
   </section>
 
   <!-- Tentang Kami -->
-  <section id="tentang" class="section-anchor py-16 sm:py-20 border-b border-slate-200/80 bg-slate-50">
+  <section id="tentang" class="section-anchor py-14 sm:py-18 border-b border-corporate-200 bg-corporate-50/60">
     <div class="mx-auto max-w-5xl px-4 sm:px-6">
       <div class="grid md:grid-cols-12 gap-8 items-center">
         <div class="md:col-span-7 space-y-4">
-          <span class="text-xs font-bold uppercase tracking-wider text-brand-700">Profil Perusahaan</span>
-          <h2 class="text-2xl sm:text-3xl font-bold text-slate-900">Membangun Kemitraan SDM yang Andal &amp; Berintegritas</h2>
-          <div class="p-4 rounded-xl border border-brand-200 bg-white shadow-sm text-slate-700 text-sm sm:text-base leading-relaxed italic">
+          <span class="text-[11px] font-bold uppercase tracking-wider text-corporate-500">Profil Korporasi</span>
+          <h2 class="text-xl sm:text-2xl font-bold text-corporate-900">Komitmen Integritas dalam Manajemen Tenaga Kerja</h2>
+          <blockquote class="p-4 rounded border-l-4 border-corporate-800 bg-white text-corporate-700 text-xs sm:text-sm leading-relaxed italic shadow-2xs">
             &ldquo;Kami adalah PT. Assa Sejahtera Trenggalek, perusahaan yang bergerak dibidang managemen sumber daya manusia dan penyediaan tenaga kerja profesional dan handal. Berdiri sejak tahun 2020 dan didukung oleh tim manajemen yang solid, berpengalaman, dan profesional, menjadikan kami sebagai salah satu pelaku usaha yang cukup dikenal dalam industri penyedia tenaga kerja dan manajemen sumber daya manusia, berpusat di Kabupaten Trenggalek.&rdquo;
-          </div>
-          <div class="space-y-2.5 pt-2">
-            <div class="flex items-start gap-3">
-              <div class="h-5 w-5 rounded-full bg-brand-100 text-brand-700 flex items-center justify-center shrink-0 mt-0.5 text-xs font-bold">✓</div>
-              <p class="text-sm text-slate-600">Penyediaan tenaga kerja yang telah melalui seleksi ketat dan uji kompetensi.</p>
+          </blockquote>
+          <div class="space-y-2 pt-1 text-xs sm:text-sm text-corporate-600">
+            <div class="flex items-start gap-2.5">
+              <span class="font-bold text-corporate-900">•</span>
+              <p>Penyediaan tenaga kerja terlatih dengan uji kompetensi terukur dan verifikasi berkas ketat.</p>
             </div>
-            <div class="flex items-start gap-3">
-              <div class="h-5 w-5 rounded-full bg-brand-100 text-brand-700 flex items-center justify-center shrink-0 mt-0.5 text-xs font-bold">✓</div>
-              <p class="text-sm text-slate-600">Kepatuhan regulasi ketenagakerjaan RI, hak ketenagakerjaan, dan transparansi administrasi.</p>
+            <div class="flex items-start gap-2.5">
+              <span class="font-bold text-corporate-900">•</span>
+              <p>Kepatuhan regulasi ketenagakerjaan Republik Indonesia dan jaminan hak normatif pekerja.</p>
             </div>
-            <div class="flex items-start gap-3">
-              <div class="h-5 w-5 rounded-full bg-brand-100 text-brand-700 flex items-center justify-center shrink-0 mt-0.5 text-xs font-bold">✓</div>
-              <p class="text-sm text-slate-600">Pemanfaatan sistem digital aman untuk koordinasi penempatan dan absensi tenaga kerja.</p>
+            <div class="flex items-start gap-2.5">
+              <span class="font-bold text-corporate-900">•</span>
+              <p>Pengelolaan data berbasis sistem digital aman yang mematuhi Undang-Undang Perlindungan Data Pribadi.</p>
             </div>
           </div>
         </div>
 
-        <div class="md:col-span-5 rounded-2xl border border-slate-200 bg-white p-6 sm:p-7 space-y-4 shadow-sm">
-          <h3 class="text-base font-bold text-slate-900">Visi &amp; Misi Perusahaan</h3>
-          <div class="space-y-3 text-xs sm:text-sm text-slate-600 leading-relaxed">
+        <div class="md:col-span-5 rounded-xl border border-corporate-200 bg-white p-6 space-y-3.5 shadow-sm text-xs sm:text-sm">
+          <h3 class="text-sm font-bold text-corporate-900 uppercase tracking-wide border-b border-corporate-100 pb-2">Visi &amp; Misi Lembaga</h3>
+          <div class="space-y-2.5 text-corporate-600 leading-relaxed">
             <p>
-              <strong class="text-slate-900">Visi:</strong> Menjadi agen tenaga kerja dan mitra manajemen SDM terkemuka di Trenggalek dan Jawa Timur yang dipercaya karena profesionalisme, integritas, dan keandalan operasional.
+              <strong class="text-corporate-900">Visi:</strong> Menjadi entitas penyedia tenaga kerja dan mitra manajemen SDM terkemuka di Trenggalek dan Jawa Timur yang dipercaya atas profesionalisme, integritas, dan transparansi tata kelola.
             </p>
             <p>
-              <strong class="text-slate-900">Misi:</strong>
+              <strong class="text-corporate-900">Misi:</strong>
             </p>
-            <ul class="list-disc pl-4 space-y-1 text-slate-600">
-              <li>Menyalurkan tenaga kerja terampil dan berdisiplin tinggi.</li>
-              <li>Memberikan solusi alih daya yang efisien dan solutif bagi mitra.</li>
-              <li>Menjaga perlindungan data dan kepatuhan hukum ketenagakerjaan secara ketat.</li>
+            <ul class="list-disc pl-4 space-y-1 text-corporate-600">
+              <li>Menyalurkan tenaga kerja siap pakai berdisiplin tinggi.</li>
+              <li>Menyediakan tata kelola alih daya terstruktur bagi mitra korporat.</li>
+              <li>Mematuhi etika bisnis dan kepatuhan perlindungan data digital.</li>
             </ul>
           </div>
         </div>
@@ -138,39 +166,39 @@
   </section>
 
   <!-- Layanan -->
-  <section id="layanan" class="section-anchor py-16 sm:py-20 border-b border-slate-200/80 bg-white">
+  <section id="layanan" class="section-anchor py-14 sm:py-18 border-b border-corporate-200 bg-white">
     <div class="mx-auto max-w-5xl px-4 sm:px-6">
-      <div class="text-center max-w-2xl mx-auto mb-12">
-        <span class="text-xs font-bold uppercase tracking-wider text-brand-700">Pilar Layanan</span>
-        <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 mt-2">Layanan Manajemen Tenaga Kerja &amp; SDM</h2>
-        <p class="text-sm text-slate-500 mt-2">Dukungan komprehensif untuk menjawab kebutuhan tenaga kerja terampil dan manajemen organisasi.</p>
+      <div class="text-center max-w-2xl mx-auto mb-10">
+        <span class="text-[11px] font-bold uppercase tracking-wider text-corporate-500">Pilar Layanan</span>
+        <h2 class="text-xl sm:text-2xl font-bold text-corporate-900 mt-1">Layanan Utama Ketenagakerjaan &amp; SDM</h2>
+        <p class="text-xs sm:text-sm text-corporate-500 mt-1.5">Solusi terintegrasi untuk kebutuhan tenaga kerja terampil dan manajemen ketenagakerjaan.</p>
       </div>
 
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
         <!-- 01 -->
-        <div class="rounded-2xl border border-slate-200 bg-slate-50/60 p-6 hover:border-brand-300 transition shadow-sm">
-          <div class="h-10 w-10 rounded-xl bg-brand-100 text-brand-700 flex items-center justify-center font-bold mb-4">01</div>
-          <h3 class="text-base font-bold text-slate-900">Penyediaan Tenaga Kerja</h3>
-          <p class="text-xs sm:text-sm text-slate-600 mt-2 leading-relaxed">
-            Penyediaan dan penempatan tenaga kerja terampil, terlatih, dan siap kerja untuk sektor industri, logistik, operasional, dan perkantoran.
+        <div class="rounded-xl border border-corporate-200 bg-corporate-50/50 p-5 shadow-2xs hover:border-corporate-400 transition">
+          <div class="h-8 w-8 rounded bg-corporate-900 text-white flex items-center justify-center font-bold text-xs mb-3">01</div>
+          <h3 class="text-sm font-bold text-corporate-900">Penyediaan Tenaga Kerja</h3>
+          <p class="text-xs text-corporate-600 mt-1.5 leading-relaxed">
+            Penyaluran tenaga kerja siap kerja, staf administratif, tenaga operasional industri, dan tenaga teknis dengan kontrak terstandar.
           </p>
         </div>
 
         <!-- 02 -->
-        <div class="rounded-2xl border border-slate-200 bg-slate-50/60 p-6 hover:border-brand-300 transition shadow-sm">
-          <div class="h-10 w-10 rounded-xl bg-brand-100 text-brand-700 flex items-center justify-center font-bold mb-4">02</div>
-          <h3 class="text-base font-bold text-slate-900">Manajemen Sumber Daya Manusia</h3>
-          <p class="text-xs sm:text-sm text-slate-600 mt-2 leading-relaxed">
-            Pengelolaan administrasi kontrak kerja, sistem penggajian (payroll), pemenuhan kewajiban ketenagakerjaan, serta pembinaan disiplin berkala.
+        <div class="rounded-xl border border-corporate-200 bg-corporate-50/50 p-5 shadow-2xs hover:border-corporate-400 transition">
+          <div class="h-8 w-8 rounded bg-corporate-900 text-white flex items-center justify-center font-bold text-xs mb-3">02</div>
+          <h3 class="text-sm font-bold text-corporate-900">Manajemen Sumber Daya Manusia</h3>
+          <p class="text-xs text-corporate-600 mt-1.5 leading-relaxed">
+            Administrasi kontrak kerja, tata kelola penggajian (payroll), pemenuhan kewajiban ketenagakerjaan BPJS, serta pembinaan kinerja staf.
           </p>
         </div>
 
         <!-- 03 -->
-        <div class="rounded-2xl border border-slate-200 bg-slate-50/60 p-6 hover:border-brand-300 transition shadow-sm">
-          <div class="h-10 w-10 rounded-xl bg-brand-100 text-brand-700 flex items-center justify-center font-bold mb-4">03</div>
-          <h3 class="text-base font-bold text-slate-900">Rekrutmen &amp; Seleksi Terstandar</h3>
-          <p class="text-xs sm:text-sm text-slate-600 mt-2 leading-relaxed">
-            Penyaringan kandidat berbasis kompetensi, verifikasi integritas latar belakang, dan pembekalan orientasi kerja sebelum penempatan aktif.
+        <div class="rounded-xl border border-corporate-200 bg-corporate-50/50 p-5 shadow-2xs hover:border-corporate-400 transition">
+          <div class="h-8 w-8 rounded bg-corporate-900 text-white flex items-center justify-center font-bold text-xs mb-3">03</div>
+          <h3 class="text-sm font-bold text-corporate-900">Rekrutmen &amp; Seleksi Terstandar</h3>
+          <p class="text-xs text-corporate-600 mt-1.5 leading-relaxed">
+            Penyaringan kandidat berbasis kompetensi, verifikasi integritas rekam jejak, dan pelatihan orientasi awal sebelum penempatan tugas.
           </p>
         </div>
       </div>
@@ -178,30 +206,30 @@
   </section>
 
   <!-- Kepatuhan Google OAuth 2.0 Screen -->
-  <section id="kepatuhan" class="section-anchor py-16 sm:py-20 border-b border-slate-200/80 bg-slate-50">
+  <section id="kepatuhan" class="section-anchor py-14 sm:py-18 border-b border-corporate-200 bg-corporate-50/60">
     <div class="mx-auto max-w-5xl px-4 sm:px-6">
-      <div class="rounded-2xl border border-slate-200 bg-white p-8 sm:p-10 shadow-sm">
-        <div class="max-w-3xl">
-          <span class="text-xs font-bold uppercase tracking-wider text-brand-700">Pusat Kepatuhan &amp; Integrasi Digital</span>
-          <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 mt-2">Keterbukaan Privasi &amp; Verifikasi Google OAuth 2.0</h2>
-          <p class="text-sm text-slate-600 mt-3 leading-relaxed">
-            Portal <strong>assasejahtera-trenggalek.com</strong> mengimplementasikan mekanisme autentikasi terverifikasi (termasuk integrasi Google Sign-In) untuk memastikan otentikasi identitas yang aman bagi staf internal dan koordinator mitra kerja.
+      <div class="rounded-xl border border-corporate-200 bg-white p-6 sm:p-8 shadow-sm">
+        <div class="max-w-3xl space-y-3">
+          <span class="text-[11px] font-bold uppercase tracking-wider text-corporate-500">Pusat Kepatuhan &amp; Integrasi Digital</span>
+          <h2 class="text-xl sm:text-2xl font-bold text-corporate-900">Keterbukaan Privasi &amp; Verifikasi Google OAuth 2.0</h2>
+          <p class="text-xs sm:text-sm text-corporate-600 leading-relaxed">
+            Portal <strong>assasejahtera-trenggalek.com</strong> mengimplementasikan mekanisme autentikasi terverifikasi (termasuk integrasi Google Sign-In) untuk memastikan identitas digital staf internal dan narahubung mitra kerja terlindungi secara aman.
           </p>
 
-          <div class="mt-6 grid sm:grid-cols-2 gap-4">
-            <div class="rounded-xl border border-slate-200 bg-slate-50 p-4">
-              <h4 class="text-xs font-bold text-slate-900 uppercase tracking-wider">Cakupan Izin (Scopes)</h4>
-              <p class="text-xs text-slate-600 mt-1">Hanya meminta izin dasar: <code class="text-brand-800 bg-brand-100 px-1 py-0.5 rounded">openid</code>, <code class="text-brand-800 bg-brand-100 px-1 py-0.5 rounded">email</code>, dan <code class="text-brand-800 bg-brand-100 px-1 py-0.5 rounded">profile</code> untuk validasi sesi.</p>
+          <div class="grid sm:grid-cols-2 gap-3 pt-2 text-xs">
+            <div class="rounded border border-corporate-200 bg-corporate-50 p-3.5">
+              <span class="font-bold text-corporate-900 block uppercase text-[10px]">Cakupan Izin (Scopes)</span>
+              <p class="text-corporate-600 mt-1">Meminta izin dasar terbatas: <code class="bg-corporate-200 text-corporate-900 px-1 py-0.5 rounded font-mono-code text-[11px]">openid</code>, <code class="bg-corporate-200 text-corporate-900 px-1 py-0.5 rounded font-mono-code text-[11px]">email</code>, dan <code class="bg-corporate-200 text-corporate-900 px-1 py-0.5 rounded font-mono-code text-[11px]">profile</code> untuk validasi sesi.</p>
             </div>
-            <div class="rounded-xl border border-slate-200 bg-slate-50 p-4">
-              <h4 class="text-xs font-bold text-slate-900 uppercase tracking-wider">Prinsip Limited Use</h4>
-              <p class="text-xs text-slate-600 mt-1">Kami sepenuhnya mematuhi <em>Google API Services User Data Policy</em>. Data tidak pernah diperjualbelikan maupun dipakai untuk pemodelan AI.</p>
+            <div class="rounded border border-corporate-200 bg-corporate-50 p-3.5">
+              <span class="font-bold text-corporate-900 block uppercase text-[10px]">Prinsip Limited Use</span>
+              <p class="text-corporate-600 mt-1">Mematuhi <em>Google API Services User Data Policy</em>. Data tidak pernah diperjualbelikan, disewakan, maupun digunakan untuk pemodelan AI.</p>
             </div>
           </div>
 
-          <div class="mt-6 flex flex-wrap gap-4 pt-4 border-t border-slate-100">
-            <a href="privacy-policy.html" class="text-xs sm:text-sm font-semibold text-brand-700 hover:text-brand-900 underline">Baca Kebijakan Privasi Lengkap &rarr;</a>
-            <a href="terms-of-service.html" class="text-xs sm:text-sm font-semibold text-brand-700 hover:text-brand-900 underline">Baca Ketentuan Layanan Lengkap &rarr;</a>
+          <div class="pt-3 border-t border-corporate-100 flex flex-wrap gap-4 text-xs font-semibold">
+            <a href="privacy-policy.html" class="text-corporate-900 hover:underline">Baca Kebijakan Privasi Lengkap &rarr;</a>
+            <a href="terms-of-service.html" class="text-corporate-900 hover:underline">Baca Ketentuan Layanan Lengkap &rarr;</a>
           </div>
         </div>
       </div>
@@ -209,45 +237,42 @@
   </section>
 
   <!-- Kontak & Kantor -->
-  <section id="kontak" class="section-anchor py-16 sm:py-20 bg-white">
+  <section id="kontak" class="section-anchor py-14 sm:py-18 bg-white">
     <div class="mx-auto max-w-5xl px-4 sm:px-6">
       <div class="grid md:grid-cols-2 gap-8 items-start">
-        <div class="space-y-4">
-          <span class="text-xs font-bold uppercase tracking-wider text-brand-700">Hubungi Kami</span>
-          <h2 class="text-2xl sm:text-3xl font-bold text-slate-900">Kantor &amp; Layanan Kemitraan</h2>
-          <p class="text-sm text-slate-600 leading-relaxed">
-            Untuk kebutuhan pengadaan tenaga kerja terampil, konsultasi manajemen SDM, atau kemitraan usaha, hubungi kantor resmi kami:
+        <div class="space-y-3">
+          <span class="text-[11px] font-bold uppercase tracking-wider text-corporate-500">Kantor Sekretariat</span>
+          <h2 class="text-xl sm:text-2xl font-bold text-corporate-900">Alamat &amp; Saluran Resmi</h2>
+          <p class="text-xs sm:text-sm text-corporate-600 leading-relaxed">
+            Untuk pengajuan kemitraan penyediaan tenaga kerja, konsultasi administrasi ketenagakerjaan, atau informasi korporat:
           </p>
-          <div class="rounded-2xl border border-slate-200 bg-slate-50 p-5 space-y-3 text-sm text-slate-600">
-            <p><strong class="text-slate-900 block">PT. Assa Sejahtera Trenggalek</strong> Agen Tenaga Kerja &amp; Manajemen SDM (Berdiri 2020)</p>
-            <p><strong class="text-slate-900">Alamat Kantor:</strong><br>Dsn Krajan, RT.02/RW.01, Kebon, Gondang, Kec. Tugu, Kabupaten Trenggalek, Jawa Timur 66352</p>
-            <p><strong class="text-slate-900">Telepon / WhatsApp:</strong> <a href="https://wa.me/6287865477388" class="text-brand-700 font-semibold hover:underline">0878-6547-7388</a></p>
-            <p><strong class="text-slate-900">Email Resmi:</strong> <a href="mailto:kontak@assasejahtera-trenggalek.com" class="text-brand-700 font-semibold hover:underline">kontak@assasejahtera-trenggalek.com</a></p>
-            <p><strong class="text-slate-900">Jam Operasional:</strong> Buka pukul 08.00 WIB (Senin – Sabtu: 08.00 – 16.00 WIB)</p>
+          <div class="rounded-xl border border-corporate-200 bg-corporate-50 p-5 space-y-2.5 text-xs text-corporate-600">
+            <p><strong class="text-corporate-900 block text-sm">PT. Assa Sejahtera Trenggalek</strong> Agen Penempatan Tenaga Kerja &amp; Konsultan SDM (Berdiri 2020)</p>
+            <p><strong class="text-corporate-900">Alamat Kantor:</strong><br>Dsn Krajan, RT.02/RW.01, Kebon, Gondang, Kec. Tugu, Kabupaten Trenggalek, Jawa Timur 66352</p>
+            <p><strong class="text-corporate-900">Telepon / WhatsApp:</strong> <a href="https://wa.me/6287865477388" class="text-corporate-900 font-bold hover:underline">0878-6547-7388</a></p>
+            <p><strong class="text-corporate-900">Surat Elektronik Resmi:</strong> <a href="mailto:kontak@assasejahtera-trenggalek.com" class="text-corporate-900 font-medium hover:underline">kontak@assasejahtera-trenggalek.com</a></p>
+            <p><strong class="text-corporate-900">Jam Operasional:</strong> Buka pukul 08.00 WIB (Senin – Sabtu: 08.00 – 16.00 WIB)</p>
           </div>
         </div>
 
-        <div class="rounded-2xl border border-slate-200 bg-slate-50 p-6 sm:p-7 space-y-4 shadow-sm">
-          <h3 class="text-base font-bold text-slate-900">Konsultasi Kebutuhan SDM Cepat</h3>
-          <p class="text-xs text-slate-600 leading-relaxed">
-            Hubungi perwakilan manajemen kami langsung via WhatsApp untuk mendiskusikan kriteria dan jumlah kebutuhan tenaga kerja perusahaan Anda.
+        <div class="rounded-xl border border-corporate-200 bg-corporate-50 p-6 space-y-3.5 shadow-2xs">
+          <h3 class="text-sm font-bold text-corporate-900">Hubungi Langsung Narahubung Rekrutmen</h3>
+          <p class="text-xs text-corporate-600 leading-relaxed">
+            Konsultasikan spesifikasi dan jumlah tenaga kerja yang Anda butuhkan langsung bersama tim manajemen kami melalui WhatsApp resmi.
           </p>
           <a
             href="https://wa.me/6287865477388?text=Halo%20Admin%20PT.%20Assa%20Sejahtera%20Trenggalek,%20saya%20ingin%20konsultasi%20layanan%20penyediaan%20tenaga%20kerja%20dan%20manajemen%20SDM."
             target="_blank"
             rel="noopener noreferrer"
-            class="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-brand-600 px-5 py-3 text-sm font-semibold text-white hover:bg-brand-700 transition shadow-sm"
+            class="inline-flex w-full items-center justify-center gap-2 rounded bg-corporate-900 px-4 py-2.5 text-xs sm:text-sm font-semibold text-white hover:bg-corporate-800 transition shadow-2xs"
           >
             <span>Hubungi via WhatsApp (0878-6547-7388)</span>
-            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.669-.7c.974.553 2.083.847 3.204.847h.005c3.181 0 5.767-2.586 5.768-5.766 0-1.54-.6-2.988-1.688-4.077-1.089-1.089-2.537-1.688-4.077-1.688zm0-2c4.288 0 7.768 3.48 7.768 7.766 0 2.073-.807 4.022-2.274 5.489s-3.415 2.275-5.488 2.275c-1.285 0-2.544-.316-3.668-.916L4 20l1.416-4.321c-.658-1.161-1.004-2.477-1.004-3.741 0-4.286 3.48-7.766 7.619-7.766z" />
-            </svg>
           </a>
           <a
             href="mailto:kontak@assasejahtera-trenggalek.com"
-            class="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-slate-200 bg-white px-5 py-3 text-sm font-semibold text-slate-700 hover:bg-slate-100 transition"
+            class="inline-flex w-full items-center justify-center gap-2 rounded border border-corporate-300 bg-white px-4 py-2.5 text-xs sm:text-sm font-semibold text-corporate-700 hover:bg-corporate-100 transition"
           >
-            Kirim Email Korespondensi
+            Kirimkan Surat Elektronik
           </a>
         </div>
       </div>
@@ -255,15 +280,15 @@
   </section>
 
   <!-- Footer -->
-  <footer class="border-t border-slate-200 bg-white py-6 text-xs text-slate-500 mt-auto">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+  <footer class="bg-white border-t border-corporate-200 py-6 text-xs text-corporate-500">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
       <p>&copy; 2026 PT. Assa Sejahtera Trenggalek. Seluruh hak cipta dilindungi undang-undang.</p>
-      <div class="flex items-center gap-4">
-        <a href="index.html" class="hover:text-slate-900 transition">Status Pemeliharaan</a>
-        <span class="text-slate-300">•</span>
-        <a href="privacy-policy.html" class="hover:text-slate-900 transition">Kebijakan Privasi</a>
-        <span class="text-slate-300">•</span>
-        <a href="terms-of-service.html" class="hover:text-slate-900 transition">Ketentuan Layanan</a>
+      <div class="flex items-center gap-4 text-corporate-600 font-medium">
+        <a href="index.html" class="hover:text-corporate-900 transition">Status Pemeliharaan</a>
+        <span class="text-corporate-300">•</span>
+        <a href="privacy-policy.html" class="hover:text-corporate-900 transition">Kebijakan Privasi</a>
+        <span class="text-corporate-300">•</span>
+        <a href="terms-of-service.html" class="hover:text-corporate-900 transition">Ketentuan Layanan</a>
       </div>
     </div>
   </footer>

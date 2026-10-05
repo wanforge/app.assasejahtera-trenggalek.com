@@ -7,45 +7,73 @@
   <meta name="description" content="Kebijakan Privasi resmi PT. Assa Sejahtera Trenggalek untuk portal assasejahtera-trenggalek.com dan kepatuhan Google OAuth 2.0.">
   <link rel="canonical" href="https://assasejahtera-trenggalek.com/privacy-policy.html">
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            corporate: {
+              50: '#f8fafc',
+              100: '#f1f5f9',
+              200: '#e2e8f0',
+              300: '#cbd5e1',
+              400: '#94a3b8',
+              500: '#64748b',
+              600: '#475569',
+              700: '#334155',
+              800: '#1e293b',
+              900: '#0f172a',
+              950: '#020617'
+            }
+          }
+        }
+      }
+    }
+  </script>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
-    body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background-color: #f8fafc;
+      color: #1e293b;
+    }
+    .font-mono-code { font-family: 'JetBrains Mono', monospace; }
   </style>
 </head>
-<body class="bg-slate-50 text-slate-800 antialiased selection:bg-emerald-600 selection:text-white min-h-screen flex flex-col justify-between">
+<body class="min-h-screen flex flex-col justify-between antialiased selection:bg-slate-800 selection:text-white">
   
-  <header class="border-b border-slate-200 bg-white/95 backdrop-blur-md sticky top-0 z-50">
+  <header class="border-b border-corporate-200 bg-white/95 backdrop-blur-md sticky top-0 z-50">
     <div class="max-w-4xl mx-auto px-4 py-4 flex items-center justify-between">
       <a href="index.html" class="flex items-center gap-3">
-        <div class="w-8 h-8 rounded-lg bg-emerald-600 flex items-center justify-center text-white font-bold text-xs">AST</div>
+        <div class="w-8 h-8 rounded-lg bg-corporate-900 flex items-center justify-center text-white font-extrabold text-xs border border-corporate-800">AST</div>
         <div>
-          <span class="font-bold text-slate-900 text-sm sm:text-base block leading-tight">PT. Assa Sejahtera Trenggalek</span>
-          <span class="text-[11px] text-slate-500">Agen Tenaga Kerja &amp; Manajemen SDM</span>
+          <span class="font-bold text-corporate-900 text-sm sm:text-base block leading-tight">PT. Assa Sejahtera Trenggalek</span>
+          <span class="text-[11px] text-corporate-500">Lembaga Penempatan Tenaga Kerja &amp; Manajemen SDM</span>
         </div>
       </a>
-      <a href="index.html" class="text-xs sm:text-sm text-emerald-700 hover:text-emerald-900 font-semibold">← Kembali ke Beranda</a>
+      <a href="index.html" class="text-xs sm:text-sm text-corporate-700 hover:text-corporate-950 font-semibold">← Kembali ke Beranda</a>
     </div>
   </header>
 
   <main class="max-w-4xl mx-auto px-4 py-10 sm:py-14 flex-grow w-full">
-    <div class="bg-white p-6 sm:p-12 rounded-2xl border border-slate-200 shadow-sm space-y-6">
-      <div class="border-b border-slate-100 pb-6">
-        <span class="text-xs font-bold text-emerald-700 uppercase tracking-wider">Dokumen Hukum &amp; Kepatuhan</span>
-        <h1 class="text-2xl sm:text-4xl font-extrabold text-slate-900 mt-2">Kebijakan Privasi (Privacy Policy)</h1>
-        <p class="text-xs text-slate-500 mt-2">Terakhir diperbarui: 5 Oktober 2026 • assasejahtera-trenggalek.com</p>
+    <div class="bg-white p-6 sm:p-12 rounded-xl border border-corporate-200 shadow-sm space-y-6">
+      <div class="border-b border-corporate-100 pb-6">
+        <span class="text-[11px] font-bold text-corporate-500 uppercase tracking-wider">Dokumen Hukum &amp; Kepatuhan</span>
+        <h1 class="text-2xl sm:text-3xl font-extrabold text-corporate-900 mt-1">Kebijakan Privasi (Privacy Policy)</h1>
+        <p class="text-xs text-corporate-500 mt-2">Berlaku Efektif: 5 Oktober 2026 • assasejahtera-trenggalek.com</p>
       </div>
 
-      <div class="space-y-6 text-slate-600 text-sm sm:text-base leading-relaxed">
+      <div class="space-y-6 text-corporate-600 text-sm sm:text-base leading-relaxed">
         <p>
           Kebijakan Privasi ini menjelaskan komitmen <strong>PT. Assa Sejahtera Trenggalek</strong> ("Perusahaan", "Kami") dalam melindungi privasi, kerahasiaan, dan keamanan data pribadi pengguna situs web serta portal layanan ketenagakerjaan dan kemitraan <strong>assasejahtera-trenggalek.com</strong>.
         </p>
 
-        <h2 class="text-lg sm:text-xl font-bold text-slate-900 pt-2">1. Dasar Hukum &amp; Kepatuhan</h2>
+        <h2 class="text-lg font-bold text-corporate-900 pt-2">1. Dasar Hukum &amp; Kepatuhan</h2>
         <p>
           Pengelolaan data pribadi di situs ini tunduk pada Undang-Undang Republik Indonesia Nomor 27 Tahun 2022 tentang Perlindungan Data Pribadi (UU PDP), regulasi ketenagakerjaan Republik Indonesia, serta ketentuan kepatuhan pihak ketiga termasuk <em>Google API Services User Data Policy</em>.
         </p>
 
-        <h2 class="text-lg sm:text-xl font-bold text-slate-900 pt-2">2. Informasi yang Kami Kumpulkan</h2>
+        <h2 class="text-lg font-bold text-corporate-900 pt-2">2. Informasi yang Kami Kumpulkan</h2>
         <p>
           Kami membatasi perolehan data pribadi hanya pada hal-hal yang relevan dan dibutuhkan untuk operasional layanan penyediaan tenaga kerja dan manajemen SDM:
         </p>
@@ -55,51 +83,51 @@
           <li><strong>Komunikasi Resmi:</strong> Pesan atau rincian korespondensi yang Anda kirimkan melalui email resmi atau nomor telepon kami.</li>
         </ul>
 
-        <h2 class="text-lg sm:text-xl font-bold text-slate-900 pt-2">3. Penggunaan Layanan Google OAuth 2.0</h2>
+        <h2 class="text-lg font-bold text-corporate-900 pt-2">3. Penggunaan Layanan Google OAuth 2.0</h2>
         <p>
           Apabila Anda masuk menggunakan akun Google Anda pada portal kami:
         </p>
         <ul class="list-disc pl-6 space-y-2">
-          <li>Kami hanya mengakses cakupan izin minimum (<em>minimum necessary scopes</em>): <code class="text-emerald-800 bg-emerald-50 px-1.5 py-0.5 rounded text-xs">openid</code>, <code class="text-emerald-800 bg-emerald-50 px-1.5 py-0.5 rounded text-xs">email</code>, dan <code class="text-emerald-800 bg-emerald-50 px-1.5 py-0.5 rounded text-xs">profile</code>.</li>
+          <li>Kami hanya mengakses cakupan izin minimum (<em>minimum necessary scopes</em>): <code class="text-corporate-900 bg-corporate-100 px-1.5 py-0.5 rounded text-xs font-mono-code">openid</code>, <code class="text-corporate-900 bg-corporate-100 px-1.5 py-0.5 rounded text-xs font-mono-code">email</code>, dan <code class="text-corporate-900 bg-corporate-100 px-1.5 py-0.5 rounded text-xs font-mono-code">profile</code>.</li>
           <li>Data dari API Google digunakan secara eksklusif untuk memverifikasi identitas pengguna dan menghubungkan sesi ke otorisasi staf/mitra yang bersangkutan.</li>
-          <li><strong>Pernyataan Kepatuhan Limited Use:</strong> Penggunaan dan transfer informasi yang diterima dari Google API oleh PT. Assa Sejahtera Trenggalek ke aplikasi lain akan mematuhi <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener noreferrer" class="text-emerald-700 hover:underline">Google API Services User Data Policy</a>, termasuk persyaratan <em>Limited Use</em>.</li>
+          <li><strong>Pernyataan Kepatuhan Limited Use:</strong> Penggunaan dan transfer informasi yang diterima dari Google API oleh PT. Assa Sejahtera Trenggalek ke aplikasi lain akan mematuhi <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener noreferrer" class="text-corporate-900 underline">Google API Services User Data Policy</a>, termasuk persyaratan <em>Limited Use</em>.</li>
         </ul>
 
-        <h2 class="text-lg sm:text-xl font-bold text-slate-900 pt-2">4. Larangan Penjualan dan Penyalahgunaan Data</h2>
+        <h2 class="text-lg font-bold text-corporate-900 pt-2">4. Larangan Penjualan dan Penyalahgunaan Data</h2>
         <p>
           <strong>Kami menegaskan bahwa PT. Assa Sejahtera Trenggalek TIDAK PERNAH dan TIDAK AKAN memperjualbelikan, menyewakan, atau mentransfer data pengguna kepada pihak ketiga mana pun tanpa persetujuan eksplisit Anda.</strong> Kami juga tidak menggunakan data pengguna Google untuk periklanan bertarget ataupun melatih model kecerdasan buatan (AI/ML).
         </p>
 
-        <h2 class="text-lg sm:text-xl font-bold text-slate-900 pt-2">5. Keamanan &amp; Retensi Data</h2>
+        <h2 class="text-lg font-bold text-corporate-900 pt-2">5. Keamanan &amp; Retensi Data</h2>
         <p>
           Seluruh komunikasi antara perangkat pengguna dan peladen kami dienkripsi menggunakan protokol aman HTTPS (Transport Layer Security - TLS 1.3). Data sesi disimpan secara terbatas selama periode aktif akun dan akan dihapus saat masa retensi berakhir atau atas permintaan pengguna.
         </p>
 
-        <h2 class="text-lg sm:text-xl font-bold text-slate-900 pt-2">6. Hak Pengguna &amp; Penghapusan Data</h2>
+        <h2 class="text-lg font-bold text-corporate-900 pt-2">6. Hak Pengguna &amp; Penghapusan Data</h2>
         <p>
           Sesuai ketentuan UU PDP, Anda berhak untuk meminta salinan data pribadi Anda, mengajukan perbaikan atas ketidakakuratan data, atau meminta penghapusan permanen akun dan seluruh riwayat data Anda dari sistem kami.
         </p>
         <p>
-          Permintaan penghapusan data dapat diajukan secara tertulis ke alamat email: <a href="mailto:kontak@assasejahtera-trenggalek.com" class="text-emerald-700 hover:underline">kontak@assasejahtera-trenggalek.com</a>. Tim kepatuhan kami akan menindaklanjuti permohonan dalam waktu maksimal 3x24 jam kerja.
+          Permintaan penghapusan data dapat diajukan secara tertulis ke alamat email: <a href="mailto:kontak@assasejahtera-trenggalek.com" class="text-corporate-900 font-semibold underline">kontak@assasejahtera-trenggalek.com</a>. Tim kepatuhan kami akan menindaklanjuti permohonan dalam waktu maksimal 3x24 jam kerja.
         </p>
 
-        <h2 class="text-lg sm:text-xl font-bold text-slate-900 pt-2">7. Kontak &amp; Legalitas Resmi</h2>
+        <h2 class="text-lg font-bold text-corporate-900 pt-2">7. Kontak &amp; Legalitas Resmi</h2>
         <p>
           Untuk pertanyaan lebih lanjut mengenai kebijakan privasi ini atau praktik perlindungan data kami, silakan hubungi kantor kami:
         </p>
-        <div class="rounded-xl border border-slate-200 bg-slate-50 p-5 text-sm space-y-2">
-          <p class="font-bold text-slate-900">PT. Assa Sejahtera Trenggalek</p>
-          <p class="text-slate-600"><strong>Bidang Usaha:</strong> Agen Tenaga Kerja &amp; Manajemen Sumber Daya Manusia (Berdiri sejak 2020)</p>
-          <p class="text-slate-600"><strong>Alamat Kantor:</strong> Dsn Krajan, RT.02/RW.01, Kebon, Gondang, Kec. Tugu, Kabupaten Trenggalek, Jawa Timur 66352</p>
-          <p class="text-slate-600"><strong>Telepon / WhatsApp:</strong> <a href="https://wa.me/6287865477388" class="text-emerald-700 hover:underline font-semibold">0878-6547-7388</a></p>
-          <p class="text-slate-600"><strong>Email Resmi:</strong> <a href="mailto:kontak@assasejahtera-trenggalek.com" class="text-emerald-700 hover:underline font-semibold">kontak@assasejahtera-trenggalek.com</a></p>
-          <p class="text-slate-500 text-xs pt-1">Jam Operasional: Buka pukul 08.00 WIB (Senin – Sabtu: 08.00 – 16.00 WIB)</p>
+        <div class="rounded-lg border border-corporate-200 bg-corporate-50 p-5 text-sm space-y-2">
+          <p class="font-bold text-corporate-900">PT. Assa Sejahtera Trenggalek</p>
+          <p class="text-corporate-600"><strong>Bidang Usaha:</strong> Agen Penempatan Tenaga Kerja &amp; Manajemen SDM (Berdiri sejak 2020)</p>
+          <p class="text-corporate-600"><strong>Alamat Kantor:</strong> Dsn Krajan, RT.02/RW.01, Kebon, Gondang, Kec. Tugu, Kabupaten Trenggalek, Jawa Timur 66352</p>
+          <p class="text-corporate-600"><strong>Telepon / WhatsApp:</strong> <a href="https://wa.me/6287865477388" class="text-corporate-900 font-semibold hover:underline">0878-6547-7388</a></p>
+          <p class="text-corporate-600"><strong>Email Resmi:</strong> <a href="mailto:kontak@assasejahtera-trenggalek.com" class="text-corporate-900 font-semibold hover:underline">kontak@assasejahtera-trenggalek.com</a></p>
+          <p class="text-corporate-500 text-xs pt-1">Jam Operasional: Buka pukul 08.00 WIB (Senin – Sabtu: 08.00 – 16.00 WIB)</p>
         </div>
       </div>
     </div>
   </main>
 
-  <footer class="border-t border-slate-200 bg-white py-6 text-center text-xs text-slate-500">
+  <footer class="border-t border-corporate-200 bg-white py-6 text-center text-xs text-corporate-500">
     <p>&copy; 2026 PT. Assa Sejahtera Trenggalek. Seluruh hak cipta dilindungi undang-undang.</p>
   </footer>
 

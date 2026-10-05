@@ -7,50 +7,78 @@
   <meta name="description" content="Ketentuan Layanan resmi PT. Assa Sejahtera Trenggalek untuk portal assasejahtera-trenggalek.com.">
   <link rel="canonical" href="https://assasejahtera-trenggalek.com/terms-of-service.html">
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            corporate: {
+              50: '#f8fafc',
+              100: '#f1f5f9',
+              200: '#e2e8f0',
+              300: '#cbd5e1',
+              400: '#94a3b8',
+              500: '#64748b',
+              600: '#475569',
+              700: '#334155',
+              800: '#1e293b',
+              900: '#0f172a',
+              950: '#020617'
+            }
+          }
+        }
+      }
+    }
+  </script>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
-    body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background-color: #f8fafc;
+      color: #1e293b;
+    }
+    .font-mono-code { font-family: 'JetBrains Mono', monospace; }
   </style>
 </head>
-<body class="bg-slate-50 text-slate-800 antialiased selection:bg-emerald-600 selection:text-white min-h-screen flex flex-col justify-between">
+<body class="min-h-screen flex flex-col justify-between antialiased selection:bg-slate-800 selection:text-white">
   
-  <header class="border-b border-slate-200 bg-white/95 backdrop-blur-md sticky top-0 z-50">
+  <header class="border-b border-corporate-200 bg-white/95 backdrop-blur-md sticky top-0 z-50">
     <div class="max-w-4xl mx-auto px-4 py-4 flex items-center justify-between">
       <a href="index.html" class="flex items-center gap-3">
-        <div class="w-8 h-8 rounded-lg bg-emerald-600 flex items-center justify-center text-white font-bold text-xs">AST</div>
+        <div class="w-8 h-8 rounded-lg bg-corporate-900 flex items-center justify-center text-white font-extrabold text-xs border border-corporate-800">AST</div>
         <div>
-          <span class="font-bold text-slate-900 text-sm sm:text-base block leading-tight">PT. Assa Sejahtera Trenggalek</span>
-          <span class="text-[11px] text-slate-500">Agen Tenaga Kerja &amp; Manajemen SDM</span>
+          <span class="font-bold text-corporate-900 text-sm sm:text-base block leading-tight">PT. Assa Sejahtera Trenggalek</span>
+          <span class="text-[11px] text-corporate-500">Lembaga Penempatan Tenaga Kerja &amp; Manajemen SDM</span>
         </div>
       </a>
-      <a href="index.html" class="text-xs sm:text-sm text-emerald-700 hover:text-emerald-900 font-semibold">← Kembali ke Beranda</a>
+      <a href="index.html" class="text-xs sm:text-sm text-corporate-700 hover:text-corporate-950 font-semibold">← Kembali ke Beranda</a>
     </div>
   </header>
 
   <main class="max-w-4xl mx-auto px-4 py-10 sm:py-14 flex-grow w-full">
-    <div class="bg-white p-6 sm:p-12 rounded-2xl border border-slate-200 shadow-sm space-y-6">
-      <div class="border-b border-slate-100 pb-6">
-        <span class="text-xs font-bold text-emerald-700 uppercase tracking-wider">Dokumen Hukum &amp; Kepatuhan</span>
-        <h1 class="text-2xl sm:text-4xl font-extrabold text-slate-900 mt-2">Ketentuan Layanan (Terms of Service)</h1>
-        <p class="text-xs text-slate-500 mt-2">Berlaku efektif sejak: 5 Oktober 2026 • assasejahtera-trenggalek.com</p>
+    <div class="bg-white p-6 sm:p-12 rounded-xl border border-corporate-200 shadow-sm space-y-6">
+      <div class="border-b border-corporate-100 pb-6">
+        <span class="text-[11px] font-bold text-corporate-500 uppercase tracking-wider">Dokumen Hukum &amp; Kepatuhan</span>
+        <h1 class="text-2xl sm:text-3xl font-extrabold text-corporate-900 mt-1">Ketentuan Layanan (Terms of Service)</h1>
+        <p class="text-xs text-corporate-500 mt-2">Berlaku Efektif: 5 Oktober 2026 • assasejahtera-trenggalek.com</p>
       </div>
 
-      <div class="space-y-6 text-slate-600 text-sm sm:text-base leading-relaxed">
+      <div class="space-y-6 text-corporate-600 text-sm sm:text-base leading-relaxed">
         <p>
           Selamat datang di situs web dan portal digital <strong>PT. Assa Sejahtera Trenggalek</strong> ("Perusahaan", "Kami"). Dengan mengakses atau menggunakan situs <strong>assasejahtera-trenggalek.com</strong> dan layanan terkait, Anda menyetujui untuk terikat oleh Ketentuan Layanan ini.
         </p>
 
-        <h2 class="text-lg sm:text-xl font-bold text-slate-900 pt-2">1. Definisi &amp; Ruang Lingkup</h2>
+        <h2 class="text-lg font-bold text-corporate-900 pt-2">1. Definisi &amp; Ruang Lingkup</h2>
         <p>
-          PT. Assa Sejahtera Trenggalek adalah entitas resmi penyedia jasa agen tenaga kerja dan manajemen sumber daya manusia (SDM) yang berpusat di Kabupaten Trenggalek sejak 2020. Portal ini disediakan untuk menyajikan informasi korporasi, layanan rekrutmen/penyaluran tenaga kerja terampil, kemitraan alih daya (outsourcing), serta sistem otentikasi identitas digital yang aman bagi staf dan mitra kerja.
+          PT. Assa Sejahtera Trenggalek adalah entitas resmi penyedia jasa agen penempatan tenaga kerja dan konsultan manajemen sumber daya manusia (SDM) yang berpusat di Kabupaten Trenggalek sejak 2020. Portal ini disediakan untuk menyajikan informasi korporasi, layanan rekrutmen/penyaluran tenaga kerja terampil, kemitraan alih daya (outsourcing), serta sistem otentikasi identitas digital yang aman bagi staf dan mitra kerja.
         </p>
 
-        <h2 class="text-lg sm:text-xl font-bold text-slate-900 pt-2">2. Akun &amp; Keamanan Autentikasi</h2>
+        <h2 class="text-lg font-bold text-corporate-900 pt-2">2. Akun &amp; Keamanan Autentikasi</h2>
         <p>
           Pengguna yang masuk menggunakan penyedia identitas pihak ketiga (seperti Google Sign-In) bertanggung jawab penuh menjaga kerahasiaan dan keamanan kredensial akun masing-masing. Anda wajib segera memberitahukan kami jika ditemukan indikasi penyusupan atau akses tanpa hak.
         </p>
 
-        <h2 class="text-lg sm:text-xl font-bold text-slate-900 pt-2">3. Pembatasan Penggunaan</h2>
+        <h2 class="text-lg font-bold text-corporate-900 pt-2">3. Pembatasan Penggunaan</h2>
         <p>
           Pengguna dilarang keras untuk:
         </p>
@@ -60,38 +88,38 @@
           <li>Memalsukan identitas, hak akses, atau bertindak atas nama PT. Assa Sejahtera Trenggalek tanpa wewenang hukum yang sah.</li>
         </ul>
 
-        <h2 class="text-lg sm:text-xl font-bold text-slate-900 pt-2">4. Hak Kekayaan Intelektual</h2>
+        <h2 class="text-lg font-bold text-corporate-900 pt-2">4. Hak Kekayaan Intelektual</h2>
         <p>
           Seluruh logo, merek dagang, konten teks, desain visual, grafik, dan susunan materi pada situs ini merupakan hak milik intelektual PT. Assa Sejahtera Trenggalek atau pemegang lisensinya, dan dilindungi oleh undang-undang hak cipta Republik Indonesia.
         </p>
 
-        <h2 class="text-lg sm:text-xl font-bold text-slate-900 pt-2">5. Batasan Tanggung Jawab</h2>
+        <h2 class="text-lg font-bold text-corporate-900 pt-2">5. Batasan Tanggung Jawab</h2>
         <p>
           Informasi yang disajikan pada situs ini disediakan untuk tujuan kemitraan ketenagakerjaan dan manajemen SDM yang sah. Kami berupaya menjaga keakuratan informasi, namun tidak bertanggung jawab atas kerugian tidak langsung yang timbul akibat gangguan koneksi atau keterlambatan sistem pihak ketiga di luar kendali wajar kami.
         </p>
 
-        <h2 class="text-lg sm:text-xl font-bold text-slate-900 pt-2">6. Hukum yang Mengatur &amp; Penyelesaian Sengketa</h2>
+        <h2 class="text-lg font-bold text-corporate-900 pt-2">6. Hukum yang Mengatur &amp; Penyelesaian Sengketa</h2>
         <p>
           Ketentuan Layanan ini diatur dan ditafsirkan sesuai dengan hukum Republik Indonesia. Setiap perselisihan yang timbul akan diselesaikan terlebih dahulu melalui musyawarah untuk mufakat, atau melalui yurisdiksi Pengadilan Negeri di wilayah Kabupaten Trenggalek, Jawa Timur.
         </p>
 
-        <h2 class="text-lg sm:text-xl font-bold text-slate-900 pt-2">7. Kontak &amp; Alamat Kantor Resmi</h2>
+        <h2 class="text-lg font-bold text-corporate-900 pt-2">7. Kontak &amp; Alamat Kantor Resmi</h2>
         <p>
           Jika Anda memiliki pertanyaan mengenai Ketentuan Layanan ini, silakan hubungi kami di:
         </p>
-        <div class="rounded-xl border border-slate-200 bg-slate-50 p-5 text-sm space-y-2">
-          <p class="font-bold text-slate-900">PT. Assa Sejahtera Trenggalek</p>
-          <p class="text-slate-600"><strong>Bidang Usaha:</strong> Agen Tenaga Kerja &amp; Manajemen Sumber Daya Manusia (Berdiri sejak 2020)</p>
-          <p class="text-slate-600"><strong>Alamat Kantor:</strong> Dsn Krajan, RT.02/RW.01, Kebon, Gondang, Kec. Tugu, Kabupaten Trenggalek, Jawa Timur 66352</p>
-          <p class="text-slate-600"><strong>Telepon / WhatsApp:</strong> <a href="https://wa.me/6287865477388" class="text-emerald-700 hover:underline font-semibold">0878-6547-7388</a></p>
-          <p class="text-slate-600"><strong>Email Resmi:</strong> <a href="mailto:kontak@assasejahtera-trenggalek.com" class="text-emerald-700 hover:underline font-semibold">kontak@assasejahtera-trenggalek.com</a></p>
-          <p class="text-slate-500 text-xs pt-1">Jam Operasional: Buka pukul 08.00 WIB (Senin – Sabtu: 08.00 – 16.00 WIB)</p>
+        <div class="rounded-lg border border-corporate-200 bg-corporate-50 p-5 text-sm space-y-2">
+          <p class="font-bold text-corporate-900">PT. Assa Sejahtera Trenggalek</p>
+          <p class="text-corporate-600"><strong>Bidang Usaha:</strong> Agen Penempatan Tenaga Kerja &amp; Manajemen SDM (Berdiri sejak 2020)</p>
+          <p class="text-corporate-600"><strong>Alamat Kantor:</strong> Dsn Krajan, RT.02/RW.01, Kebon, Gondang, Kec. Tugu, Kabupaten Trenggalek, Jawa Timur 66352</p>
+          <p class="text-corporate-600"><strong>Telepon / WhatsApp:</strong> <a href="https://wa.me/6287865477388" class="text-corporate-900 font-semibold hover:underline">0878-6547-7388</a></p>
+          <p class="text-corporate-600"><strong>Email Resmi:</strong> <a href="mailto:kontak@assasejahtera-trenggalek.com" class="text-corporate-900 font-semibold hover:underline">kontak@assasejahtera-trenggalek.com</a></p>
+          <p class="text-corporate-500 text-xs pt-1">Jam Operasional: Buka pukul 08.00 WIB (Senin – Sabtu: 08.00 – 16.00 WIB)</p>
         </div>
       </div>
     </div>
   </main>
 
-  <footer class="border-t border-slate-200 bg-white py-6 text-center text-xs text-slate-500">
+  <footer class="border-t border-corporate-200 bg-white py-6 text-center text-xs text-corporate-500">
     <p>&copy; 2026 PT. Assa Sejahtera Trenggalek. Seluruh hak cipta dilindungi undang-undang.</p>
   </footer>
 
