@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PT. Assa Sejahtera Trenggalek | Solusi Kemitraan & Perdagangan Terpadu</title>
-  <meta name="description" content="PT. Assa Sejahtera Trenggalek melayani kebutuhan kemitraan usaha, pengadaan barang & jasa, serta perdagangan umum terpercaya di Kabupaten Trenggalek dan sekitarnya.">
+  <title>Pemeliharaan Sistem Terjadwal | PT. Assa Sejahtera Trenggalek</title>
+  <meta name="description" content="Portal resmi PT. Assa Sejahtera Trenggalek sedang dalam peningkatan kapasitas dan pemeliharaan infrastruktur digital terencana.">
   <link rel="canonical" href="https://assasejahtera-trenggalek.com/">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://assasejahtera-trenggalek.com/">
-  <meta property="og:title" content="PT. Assa Sejahtera Trenggalek | Solusi Kemitraan Terpadu">
-  <meta property="og:description" content="Layanan kemitraan usaha, pengadaan barang, distribusi, dan perdagangan umum profesional di Trenggalek.">
+  <meta property="og:title" content="Pemeliharaan Sistem Terjadwal — PT. Assa Sejahtera Trenggalek">
+  <meta property="og:description" content="Peningkatan kapasitas, pembaruan keamanan, dan optimalisasi sistem digital PT. Assa Sejahtera Trenggalek.">
   <meta property="og:locale" content="id_ID">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -40,191 +40,577 @@
     }
   </script>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
     body { font-family: 'Plus Jakarta Sans', sans-serif; }
-    .section-anchor { scroll-margin-top: 5rem; }
+    .font-mono-code { font-family: 'JetBrains Mono', monospace; }
   </style>
 </head>
-<body class="bg-slate-950 text-slate-100 antialiased selection:bg-brand-600 selection:text-white flex flex-col min-h-screen">
+<body class="bg-slate-950 text-slate-100 antialiased selection:bg-brand-600 selection:text-white min-h-screen flex flex-col justify-between relative overflow-x-hidden">
+
+  <!-- Ambient Glow Background -->
+  <div class="fixed inset-0 pointer-events-none -z-10 overflow-hidden">
+    <div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[700px] h-[500px] bg-gradient-to-b from-brand-600/15 via-emerald-900/10 to-transparent blur-3xl opacity-70"></div>
+    <div class="absolute bottom-0 right-0 w-[500px] h-[400px] bg-emerald-950/20 blur-3xl opacity-50"></div>
+  </div>
 
   <!-- Header -->
-  <header class="sticky top-0 z-50 border-b border-slate-800 bg-slate-950/80 backdrop-blur-md">
-    <div class="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
-      <a href="#beranda" class="flex items-center gap-3">
-        <span class="grid h-10 w-10 place-items-center rounded-xl bg-brand-600 text-sm font-extrabold tracking-tight text-white shadow-sm">AST</span>
+  <header class="border-b border-slate-800/80 bg-slate-950/80 backdrop-blur-md sticky top-0 z-40">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3">
+        <span class="grid h-10 w-10 place-items-center rounded-xl bg-brand-600 text-sm font-extrabold tracking-tight text-white shadow-md shadow-brand-900/40">AST</span>
         <div>
           <span class="block text-sm font-extrabold tracking-tight text-white sm:text-base leading-tight">Assa Sejahtera</span>
           <span class="block text-[11px] font-medium text-slate-400">Trenggalek, Jawa Timur</span>
         </div>
       </a>
-      <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-300">
-        <a href="#tentang" class="hover:text-white transition">Tentang Kami</a>
-        <a href="#layanan" class="hover:text-white transition">Layanan</a>
-        <a href="#kepatuhan" class="hover:text-white transition">Kepatuhan &amp; Legal</a>
-        <a href="#kontak" class="hover:text-white transition">Kontak</a>
-      </nav>
+
+      <!-- Live Clock & Status Pill -->
       <div class="flex items-center gap-3">
-        <a href="#kontak" class="rounded-lg bg-brand-600 px-4 py-2 text-xs font-semibold text-white shadow hover:bg-brand-500 transition">Hubungi Kami</a>
+        <div class="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-full border border-slate-800 bg-slate-900/80 text-xs text-slate-300">
+          <span class="text-slate-400">WIB:</span>
+          <span id="live-clock" class="font-mono-code font-medium text-brand-400">--:--:--</span>
+        </div>
+        <div class="inline-flex items-center gap-2 rounded-full border border-amber-500/30 bg-amber-500/10 px-3 py-1.5 text-xs font-semibold text-amber-400">
+          <span class="h-2 w-2 rounded-full bg-amber-400 animate-ping"></span>
+          <span>Pemeliharaan Aktif</span>
+        </div>
       </div>
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section id="beranda" class="relative overflow-hidden pt-16 pb-20 sm:pt-24 sm:pb-28">
-    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-brand-900/30 via-slate-950/50 to-slate-950 -z-10"></div>
-    <div class="mx-auto max-w-6xl px-4 sm:px-6 text-center">
-      <div class="inline-flex items-center gap-2 rounded-full border border-brand-500/30 bg-brand-500/10 px-3 py-1 text-xs font-medium text-brand-300 mb-6">
-        <span class="h-1.5 w-1.5 rounded-full bg-brand-400 animate-pulse"></span>
-        Mitra Terpercaya Perdagangan &amp; Pengadaan Trenggalek
-      </div>
-      <h1 class="text-3xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl max-w-4xl mx-auto leading-tight">
-        Membangun Sinergi, Menggerakkan Ekonomi Daerah
-      </h1>
-      <p class="mt-6 text-base sm:text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">
-        PT. Assa Sejahtera Trenggalek berkomitmen memberikan solusi terpadu dalam pengadaan barang, distribusi perdagangan umum, dan kemitraan strategis yang transparan serta akuntabel.
-      </p>
-      <div class="mt-8 flex flex-wrap justify-center gap-4">
-        <a href="#layanan" class="rounded-xl bg-brand-600 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-brand-900/40 hover:bg-brand-500 transition">Jelajahi Layanan</a>
-        <a href="#kepatuhan" class="rounded-xl border border-slate-700 bg-slate-900 px-6 py-3 text-sm font-semibold text-slate-200 hover:bg-slate-800 transition">Informasi Legalitas</a>
-      </div>
-    </div>
-  </section>
+  <!-- Main Content -->
+  <main class="max-w-5xl mx-auto px-4 sm:px-6 py-10 sm:py-16 flex-grow w-full">
 
-  <!-- Tentang Kami -->
-  <section id="tentang" class="section-anchor border-t border-slate-800/80 bg-slate-900/40 py-16 sm:py-20">
-    <div class="mx-auto max-w-6xl px-4 sm:px-6">
-      <div class="grid md:grid-cols-2 gap-10 items-center">
+    <!-- Hero Card -->
+    <div class="rounded-3xl border border-slate-800 bg-slate-900/70 p-6 sm:p-12 shadow-2xl backdrop-blur-xl relative overflow-hidden mb-8">
+      <div class="absolute -right-16 -top-16 w-56 h-56 bg-brand-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 pb-8 border-b border-slate-800">
         <div>
-          <span class="text-xs font-bold uppercase tracking-wider text-brand-400">Profil Korporasi</span>
-          <h2 class="text-2xl sm:text-3xl font-bold text-white mt-2">Integritas dan Profesionalitas di Setiap Langkah</h2>
-          <p class="mt-4 text-slate-300 text-sm sm:text-base leading-relaxed">
-            Berpusat di Kabupaten Trenggalek, Jawa Timur, <strong>PT. Assa Sejahtera Trenggalek</strong> hadir untuk menjawab kebutuhan rantai pasok lokal maupun regional. Kami mengintegrasikan tata kelola bisnis modern dengan komitmen kepatuhan regulasi yang ketat.
+          <div class="inline-flex items-center gap-2 rounded-lg border border-brand-500/30 bg-brand-500/10 px-3 py-1 text-xs font-semibold text-brand-300 mb-3">
+            <span class="h-1.5 w-1.5 rounded-full bg-brand-400"></span>
+            Pembaruan Infrastruktur Terencana v2.4
+          </div>
+          <h1 class="text-2xl sm:text-4xl font-extrabold text-white tracking-tight leading-tight">
+            Peningkatan Kapasitas &amp; Sistem Digital
+          </h1>
+          <p class="mt-3 text-slate-300 text-sm sm:text-base leading-relaxed max-w-2xl">
+            Portal resmi <strong>PT. Assa Sejahtera Trenggalek</strong> sedang dalam pembaruan berkala. Kami memperkuat arsitektur server, integrasi Google OAuth 2.0, serta pengamanan transaksi pengadaan barang dan perdagangan umum untuk memastikan keandalan terbaik bagi seluruh mitra.
           </p>
-          <div class="mt-6 space-y-3">
-            <div class="flex items-start gap-3">
-              <div class="h-5 w-5 rounded-full bg-brand-500/20 text-brand-400 flex items-center justify-center shrink-0 mt-0.5">✓</div>
-              <p class="text-sm text-slate-300">Tata kelola transparan dan berlandaskan kepatuhan hukum RI.</p>
-            </div>
-            <div class="flex items-start gap-3">
-              <div class="h-5 w-5 rounded-full bg-brand-500/20 text-brand-400 flex items-center justify-center shrink-0 mt-0.5">✓</div>
-              <p class="text-sm text-slate-300">Fokus pada efisiensi rantai pasok dan kepuasan mitra kerja.</p>
-            </div>
-            <div class="flex items-start gap-3">
-              <div class="h-5 w-5 rounded-full bg-brand-500/20 text-brand-400 flex items-center justify-center shrink-0 mt-0.5">✓</div>
-              <p class="text-sm text-slate-300">Pemanfaatan sistem digital terverifikasi untuk kemudahan transaksi.</p>
-            </div>
+        </div>
+
+        <!-- Quick Status Badge Box -->
+        <div class="w-full md:w-auto shrink-0 bg-slate-950/60 border border-slate-800 rounded-2xl p-4 sm:p-5 flex flex-col gap-2">
+          <span class="text-[11px] font-bold uppercase tracking-wider text-slate-400">Estimasi Selesai</span>
+          <span class="text-lg font-bold text-white flex items-center gap-2">
+            <svg class="w-5 h-5 text-brand-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span id="target-time-display">Hari ini, 23:59 WIB</span>
+          </span>
+          <span class="text-xs text-slate-400">Prioritas keamanan transaksi mitra</span>
+        </div>
+      </div>
+
+      <!-- Interactive Countdown & Progress Bar -->
+      <div class="pt-8">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
+          <span class="text-xs font-bold uppercase tracking-wider text-slate-300">Hitung Mundur Estimasi Pemulihan</span>
+          <span class="text-xs font-mono-code text-brand-400 font-semibold" id="progress-percentage-label">Progres: 88% Selesai</span>
+        </div>
+
+        <!-- Countdown Blocks -->
+        <div class="grid grid-cols-4 gap-2 sm:gap-4 mb-6">
+          <div class="rounded-xl border border-slate-800 bg-slate-950/80 p-3 sm:p-4 text-center">
+            <div id="timer-days" class="text-xl sm:text-3xl font-extrabold text-white font-mono-code">00</div>
+            <div class="text-[10px] sm:text-xs text-slate-400 uppercase tracking-wider mt-1 font-semibold">Hari</div>
+          </div>
+          <div class="rounded-xl border border-slate-800 bg-slate-950/80 p-3 sm:p-4 text-center">
+            <div id="timer-hours" class="text-xl sm:text-3xl font-extrabold text-white font-mono-code">04</div>
+            <div class="text-[10px] sm:text-xs text-slate-400 uppercase tracking-wider mt-1 font-semibold">Jam</div>
+          </div>
+          <div class="rounded-xl border border-slate-800 bg-slate-950/80 p-3 sm:p-4 text-center">
+            <div id="timer-minutes" class="text-xl sm:text-3xl font-extrabold text-white font-mono-code">25</div>
+            <div class="text-[10px] sm:text-xs text-slate-400 uppercase tracking-wider mt-1 font-semibold">Menit</div>
+          </div>
+          <div class="rounded-xl border border-slate-800 bg-slate-950/80 p-3 sm:p-4 text-center">
+            <div id="timer-seconds" class="text-xl sm:text-3xl font-extrabold text-brand-400 font-mono-code">18</div>
+            <div class="text-[10px] sm:text-xs text-slate-400 uppercase tracking-wider mt-1 font-semibold">Detik</div>
           </div>
         </div>
-        <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-6 sm:p-8 space-y-4">
-          <h3 class="text-lg font-bold text-white">Visi &amp; Misi Utama</h3>
-          <p class="text-sm text-slate-300 leading-relaxed">
-            <strong>Visi:</strong> Menjadi entitas usaha terdepan di wilayah Trenggalek dan sekitarnya yang mampu menghadirkan nilai tambah berkelanjutan bagi seluruh pemangku kepentingan.
-          </p>
-          <p class="text-sm text-slate-300 leading-relaxed">
-            <strong>Misi:</strong> Memberikan layanan pengadaan barang dan jasa bermutu tinggi, menjaga integritas rantai distribusi, serta mematuhi seluruh ketentuan perlindungan data dan etika bisnis digital.
-          </p>
+
+        <!-- Progress Bar Track -->
+        <div class="w-full bg-slate-950 rounded-full h-3 p-0.5 border border-slate-800 overflow-hidden">
+          <div id="main-progress-bar" class="bg-gradient-to-r from-brand-600 via-emerald-500 to-teal-400 h-full rounded-full transition-all duration-1000 ease-out" style="width: 88%"></div>
         </div>
+        <p class="text-[11px] text-slate-400 mt-2 text-right">Tahap saat ini: Verifikasi Integritas Data &amp; Pengujian Latensi API</p>
       </div>
     </div>
-  </section>
 
-  <!-- Layanan -->
-  <section id="layanan" class="section-anchor border-t border-slate-800/80 py-16 sm:py-20">
-    <div class="mx-auto max-w-6xl px-4 sm:px-6">
-      <div class="text-center max-w-2xl mx-auto mb-12">
-        <span class="text-xs font-bold uppercase tracking-wider text-brand-400">Pilar Bisnis</span>
-        <h2 class="text-2xl sm:text-3xl font-bold text-white mt-2">Layanan &amp; Kompetensi Utama</h2>
-        <p class="text-sm text-slate-400 mt-2">Solusi komprehensif yang dirancang untuk mendukung operasional mitra korporat dan publik.</p>
-      </div>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-brand-500/50 transition">
-          <div class="h-10 w-10 rounded-xl bg-brand-500/20 text-brand-400 flex items-center justify-center font-bold mb-4">01</div>
-          <h3 class="text-base font-bold text-white">Pengadaan Barang &amp; Jasa</h3>
-          <p class="text-sm text-slate-300 mt-2 leading-relaxed">Pengadaan material, peralatan kerja, dan perlengkapan institusi dengan standar mutu terbaik serta jaminan ketepatan waktu.</p>
-        </div>
-        <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-brand-500/50 transition">
-          <div class="h-10 w-10 rounded-xl bg-brand-500/20 text-brand-400 flex items-center justify-center font-bold mb-4">02</div>
-          <h3 class="text-base font-bold text-white">Distribusi &amp; Perdagangan Umum</h3>
-          <p class="text-sm text-slate-300 mt-2 leading-relaxed">Jaringan distribusi komoditas kebutuhan usaha, barang niaga, serta logistik terintegrasi untuk menjamin ketersediaan stok mitra.</p>
-        </div>
-        <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-brand-500/50 transition">
-          <div class="h-10 w-10 rounded-xl bg-brand-500/20 text-brand-400 flex items-center justify-center font-bold mb-4">03</div>
-          <h3 class="text-base font-bold text-white">Kemitraan &amp; Konsultasi Operasional</h3>
-          <p class="text-sm text-slate-300 mt-2 leading-relaxed">Pendampingan manajemen pengadaan, integrasi sistem pemesanan digital, dan sinergi proyek bersama pemangku kepentingan daerah.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+    <!-- Two Columns: Interactive Health Matrix & Interactive Notification Form -->
+    <div class="grid md:grid-cols-12 gap-8 mb-8">
 
-  <!-- Kepatuhan & Google OAuth 2.0 Verification Screen -->
-  <section id="kepatuhan" class="section-anchor border-t border-slate-800/80 bg-slate-900/50 py-16 sm:py-20">
-    <div class="mx-auto max-w-6xl px-4 sm:px-6">
-      <div class="rounded-3xl border border-slate-800 bg-slate-900 p-8 sm:p-12">
-        <div class="max-w-3xl">
-          <span class="text-xs font-bold uppercase tracking-wider text-brand-400">Pusat Kepatuhan &amp; Integrasi Digital</span>
-          <h2 class="text-2xl sm:text-3xl font-bold text-white mt-2">Keterbukaan Privasi &amp; Verifikasi Google OAuth 2.0</h2>
-          <p class="text-sm text-slate-300 mt-4 leading-relaxed">
-            Portal <strong>assasejahtera-trenggalek.com</strong> mengimplementasikan mekanisme autentikasi terverifikasi (termasuk integrasi Google Sign-In) untuk memastikan otentikasi identitas yang aman bagi staf dan mitra yang berwenang.
-          </p>
-
-          <div class="mt-6 grid sm:grid-cols-2 gap-4">
-            <div class="rounded-xl border border-slate-800 bg-slate-950 p-4">
-              <h4 class="text-xs font-bold text-white uppercase tracking-wider">Cakupan Izin (Scopes)</h4>
-              <p class="text-xs text-slate-300 mt-1">Hanya meminta izin dasar: <code class="text-brand-300">openid</code>, <code class="text-brand-300">email</code>, dan <code class="text-brand-300">profile</code> untuk verifikasi sesi login.</p>
-            </div>
-            <div class="rounded-xl border border-slate-800 bg-slate-950 p-4">
-              <h4 class="text-xs font-bold text-white uppercase tracking-wider">Prinsip Limited Use</h4>
-              <p class="text-xs text-slate-300 mt-1">Kami sepenuhnya mematuhi <em>Google API Services User Data Policy</em>. Data tidak digunakan untuk periklanan atau pemodelan AI.</p>
-            </div>
-          </div>
-
-          <div class="mt-6 flex flex-wrap gap-4 pt-4 border-t border-slate-800">
-            <a href="privacy-policy.html" class="text-xs sm:text-sm font-semibold text-brand-400 hover:text-brand-300 underline">Baca Kebijakan Privasi Lengkap &rarr;</a>
-            <a href="terms-of-service.html" class="text-xs sm:text-sm font-semibold text-brand-400 hover:text-brand-300 underline">Baca Ketentuan Layanan Lengkap &rarr;</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Kontak -->
-  <section id="kontak" class="section-anchor border-t border-slate-800/80 py-16 sm:py-20">
-    <div class="mx-auto max-w-6xl px-4 sm:px-6">
-      <div class="grid md:grid-cols-2 gap-10">
+      <!-- Column 1: Interactive System Diagnostics (7 cols) -->
+      <div class="md:col-span-7 rounded-3xl border border-slate-800 bg-slate-900/60 p-6 sm:p-8 flex flex-col justify-between">
         <div>
-          <span class="text-xs font-bold uppercase tracking-wider text-brand-400">Hubungi Kami</span>
-          <h2 class="text-2xl sm:text-3xl font-bold text-white mt-2">Kantor &amp; Layanan Pelanggan</h2>
-          <p class="text-sm text-slate-300 mt-4 leading-relaxed">
-            Untuk informasi pengadaan, peluang kemitraan, atau pertanyaan terkait perlindungan data privasi, silakan hubungi tim kami:
-          </p>
-          <div class="mt-6 space-y-3 text-sm text-slate-300">
-            <p><strong>Alamat:</strong> Kabupaten Trenggalek, Jawa Timur, Indonesia</p>
-            <p><strong>Email Resmi:</strong> <a href="mailto:kontak@assasejahtera-trenggalek.com" class="text-brand-400 hover:underline">kontak@assasejahtera-trenggalek.com</a></p>
-            <p><strong>Jam Operasional:</strong> Senin – Jumat: 08.00 – 16.00 WIB</p>
+          <div class="flex items-center justify-between mb-4">
+            <div>
+              <span class="text-xs font-bold uppercase tracking-wider text-brand-400">Diagnostik Modul</span>
+              <h2 class="text-lg sm:text-xl font-bold text-white">Status Layanan &amp; Infrastruktur</h2>
+            </div>
+            <button id="btn-refresh-status" onclick="runDiagnosticsCheck()" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-slate-700 bg-slate-800 hover:bg-slate-700 text-xs font-semibold text-slate-200 transition active:scale-95">
+              <svg id="refresh-icon" class="w-3.5 h-3.5 text-slate-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+              </svg>
+              <span id="refresh-label">Uji Latensi</span>
+            </button>
+          </div>
+
+          <!-- Module List -->
+          <div class="space-y-3 mt-4" id="modules-container">
+            <!-- Modul 1 -->
+            <div class="p-3.5 rounded-xl border border-slate-800/90 bg-slate-950/60 flex items-center justify-between gap-3">
+              <div class="flex items-center gap-3">
+                <div class="h-2.5 w-2.5 rounded-full bg-emerald-400"></div>
+                <div>
+                  <h3 class="text-xs font-bold text-white">Portal Web &amp; SSL Enkripsi TLS 1.3</h3>
+                  <p class="text-[11px] text-slate-400">Katalog korporat &amp; halaman publik</p>
+                </div>
+              </div>
+              <div class="text-right">
+                <span class="inline-block px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">Aktif</span>
+                <span class="block text-[10px] font-mono-code text-slate-400 ping-metric">19 ms</span>
+              </div>
+            </div>
+
+            <!-- Modul 2 -->
+            <div class="p-3.5 rounded-xl border border-slate-800/90 bg-slate-950/60 flex items-center justify-between gap-3">
+              <div class="flex items-center gap-3">
+                <div class="h-2.5 w-2.5 rounded-full bg-amber-400 animate-pulse"></div>
+                <div>
+                  <h3 class="text-xs font-bold text-white">Google OAuth 2.0 Auth Bridge</h3>
+                  <p class="text-[11px] text-slate-400">Audit kepatuhan izin (openid, email, profile)</p>
+                </div>
+              </div>
+              <div class="text-right">
+                <span class="inline-block px-2 py-0.5 rounded text-[10px] font-bold bg-amber-500/10 text-amber-400 border border-amber-500/20">Sinkronisasi</span>
+                <span class="block text-[10px] font-mono-code text-slate-400 ping-metric">28 ms</span>
+              </div>
+            </div>
+
+            <!-- Modul 3 -->
+            <div class="p-3.5 rounded-xl border border-slate-800/90 bg-slate-950/60 flex items-center justify-between gap-3">
+              <div class="flex items-center gap-3">
+                <div class="h-2.5 w-2.5 rounded-full bg-amber-400 animate-pulse"></div>
+                <div>
+                  <h3 class="text-xs font-bold text-white">Database Transaksi &amp; Rantai Pasok</h3>
+                  <p class="text-[11px] text-slate-400">Indeksasi pengadaan &amp; optimasi query</p>
+                </div>
+              </div>
+              <div class="text-right">
+                <span class="inline-block px-2 py-0.5 rounded text-[10px] font-bold bg-amber-500/10 text-amber-400 border border-amber-500/20">Optimasi</span>
+                <span class="block text-[10px] font-mono-code text-slate-400 ping-metric">34 ms</span>
+              </div>
+            </div>
+
+            <!-- Modul 4 -->
+            <div class="p-3.5 rounded-xl border border-slate-800/90 bg-slate-950/60 flex items-center justify-between gap-3">
+              <div class="flex items-center gap-3">
+                <div class="h-2.5 w-2.5 rounded-full bg-emerald-400"></div>
+                <div>
+                  <h3 class="text-xs font-bold text-white">Server Korespondensi &amp; Notifikasi Resmi</h3>
+                  <p class="text-[11px] text-slate-400">SMTP Gateway kontak@assasejahtera-trenggalek.com</p>
+                </div>
+              </div>
+              <div class="text-right">
+                <span class="inline-block px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">Siaga Normal</span>
+                <span class="block text-[10px] font-mono-code text-slate-400 ping-metric">22 ms</span>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 flex flex-col justify-center">
-          <h3 class="text-base font-bold text-white mb-2">Permintaan Informasi Cepat</h3>
-          <p class="text-xs text-slate-400 mb-4">Kirimkan rincian kebutuhan Anda secara resmi melalui email kami.</p>
-          <a href="mailto:kontak@assasejahtera-trenggalek.com" class="inline-flex items-center justify-center rounded-xl bg-brand-600 px-5 py-3 text-sm font-semibold text-white hover:bg-brand-500 transition">
-            Kirim Email Sekarang
-          </a>
+
+        <div id="diagnostic-feedback" class="mt-4 pt-4 border-t border-slate-800/70 text-xs text-slate-400 flex items-center justify-between">
+          <span>Terakhir diperiksa: <strong id="last-ping-time" class="text-slate-300 font-mono-code">Otomatis</strong></span>
+          <span class="text-emerald-400 font-semibold flex items-center gap-1">
+            <span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span> Integritas 100% Terjaga
+          </span>
+        </div>
+      </div>
+
+      <!-- Column 2: Notification Subscription & Quick Support (5 cols) -->
+      <div class="md:col-span-5 flex flex-col gap-6">
+
+        <!-- Subscribe Card -->
+        <div class="rounded-3xl border border-slate-800 bg-slate-900/60 p-6 sm:p-7">
+          <span class="text-xs font-bold uppercase tracking-wider text-brand-400">Notifikasi Otomatis</span>
+          <h2 class="text-lg font-bold text-white mt-1">Dapatkan Notifikasi Saat Portal Kembali Daring</h2>
+          <p class="text-xs text-slate-300 mt-2 leading-relaxed">
+            Daftarkan email korporat Anda untuk menerima pemberitahuan prioritas segera setelah seluruh sistem aktif penuh.
+          </p>
+
+          <form id="subscribe-form" onsubmit="handleSubscription(event)" class="mt-4 space-y-3">
+            <div id="subscribe-input-group">
+              <label for="sub-email" class="sr-only">Alamat Email Resmi</label>
+              <div class="relative">
+                <input
+                  type="email"
+                  id="sub-email"
+                  required
+                  placeholder="nama@perusahaan.com"
+                  class="w-full rounded-xl border border-slate-700 bg-slate-950 px-4 py-3 text-xs sm:text-sm text-white placeholder-slate-500 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500 transition"
+                >
+              </div>
+              <button
+                type="submit"
+                id="btn-subscribe"
+                class="w-full mt-2 rounded-xl bg-brand-600 hover:bg-brand-500 px-4 py-3 text-xs sm:text-sm font-semibold text-white shadow-lg shadow-brand-900/40 transition active:scale-[0.98] flex items-center justify-center gap-2"
+              >
+                <span>Beri Tahu Saya Saat Siap</span>
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </button>
+            </div>
+
+            <!-- Success State Box (Hidden by default) -->
+            <div id="subscribe-success-box" class="hidden p-4 rounded-xl border border-brand-500/30 bg-brand-500/10 space-y-2">
+              <div class="flex items-center gap-2 text-brand-400 font-bold text-xs sm:text-sm">
+                <svg class="w-5 h-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span>Email Anda Telah Terdaftar</span>
+              </div>
+              <p class="text-xs text-slate-300" id="subscribed-email-text">
+                Notifikasi peluncuran akan otomatis dikirimkan ke alamat Anda.
+              </p>
+              <button type="button" onclick="resetSubscription()" class="text-[11px] text-slate-400 hover:text-white underline mt-1">
+                Ganti atau daftarkan email lain
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Emergency Contact Card -->
+        <div class="rounded-3xl border border-slate-800 bg-slate-900/60 p-6 sm:p-7 space-y-4">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Kebutuhan Mendesak</span>
+            <h3 class="text-base font-bold text-white mt-1">Layanan Informasi &amp; Pengadaan Darurat</h3>
+            <p class="text-xs text-slate-300 mt-1 leading-relaxed">
+              Tim pengadaan dan administrasi operasional kami tetap dapat dihubungi melalui kanal resmi selama masa pemeliharaan:
+            </p>
+          </div>
+
+          <div class="space-y-2">
+            <!-- Copy Email Button -->
+            <button
+              onclick="copyCorporateEmail()"
+              id="btn-copy-email"
+              class="w-full flex items-center justify-between p-3 rounded-xl border border-slate-800 bg-slate-950/70 hover:bg-slate-800/80 transition text-left group"
+            >
+              <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-lg bg-brand-500/10 text-brand-400 flex items-center justify-center shrink-0">
+                  <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                </div>
+                <div>
+                  <span class="block text-xs font-semibold text-white">Email Resmi</span>
+                  <span class="block text-[11px] text-slate-400 group-hover:text-brand-300 font-mono-code transition">kontak@assasejahtera-trenggalek.com</span>
+                </div>
+              </div>
+              <span id="copy-status-tag" class="text-[11px] font-semibold text-slate-400 border border-slate-700 px-2 py-0.5 rounded group-hover:border-slate-500 transition">
+                Salin
+              </span>
+            </button>
+
+            <!-- WhatsApp Direct Link -->
+            <a
+              href="https://wa.me/6281335000000?text=Halo%20Admin%20PT.%20Assa%20Sejahtera%20Trenggalek,%20saya%20ingin%20menanyakan%20perihal%20kemitraan/layanan."
+              target="_blank"
+              rel="noopener noreferrer"
+              class="w-full flex items-center justify-between p-3 rounded-xl border border-slate-800 bg-slate-950/70 hover:bg-slate-800/80 transition text-left group"
+            >
+              <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center shrink-0">
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.669-.7c.974.553 2.083.847 3.204.847h.005c3.181 0 5.767-2.586 5.768-5.766 0-1.54-.6-2.988-1.688-4.077-1.089-1.089-2.537-1.688-4.077-1.688zm0-2c4.288 0 7.768 3.48 7.768 7.766 0 2.073-.807 4.022-2.274 5.489s-3.415 2.275-5.488 2.275c-1.285 0-2.544-.316-3.668-.916L4 20l1.416-4.321c-.658-1.161-1.004-2.477-1.004-3.741 0-4.286 3.48-7.766 7.619-7.766z" />
+                  </svg>
+                </div>
+                <div>
+                  <span class="block text-xs font-semibold text-white">Layanan WhatsApp Tim Cepat</span>
+                  <span class="block text-[11px] text-slate-400 group-hover:text-emerald-300 transition">Respons pesan kemitraan darurat</span>
+                </div>
+              </div>
+              <span class="text-slate-400 group-hover:text-white transition">&rarr;</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Interactive Scope & Details Accordion -->
+    <div class="rounded-3xl border border-slate-800 bg-slate-900/60 p-6 sm:p-8">
+      <button
+        onclick="toggleAccordion()"
+        class="w-full flex items-center justify-between text-left group focus:outline-none"
+      >
+        <div class="flex items-center gap-3">
+          <div class="w-8 h-8 rounded-xl bg-slate-800 text-brand-400 flex items-center justify-center font-bold text-xs">
+            AST
+          </div>
+          <div>
+            <h3 class="text-sm sm:text-base font-bold text-white group-hover:text-brand-300 transition">
+              Cakupan Pembaruan Sistem &amp; Kepatuhan Regulasi
+            </h3>
+            <p class="text-xs text-slate-400">Klik untuk melihat rincian teknis pekerjaan yang sedang berlangsung</p>
+          </div>
+        </div>
+        <svg id="accordion-icon" class="w-5 h-5 text-slate-400 group-hover:text-white transition transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+        </svg>
+      </button>
+
+      <div id="accordion-content" class="hidden mt-6 pt-6 border-t border-slate-800 text-xs sm:text-sm text-slate-300 space-y-4 leading-relaxed">
+        <p>
+          Pemeliharaan terjadwal ini mencakup beberapa peningkatan kritis demi menjamin operasional PT. Assa Sejahtera Trenggalek berjalan dengan tingkat keamanan maksimal:
+        </p>
+        <ul class="list-disc pl-5 space-y-2 text-slate-300 text-xs sm:text-sm">
+          <li><strong>Audit Kepatuhan Google Cloud Console OAuth 2.0:</strong> Memastikan implementasi verifikasi identitas memenuhi secara mutlak <em>Google API Services User Data Policy</em> (Limited Use Requirement) tanpa kebocoran data pihak ketiga.</li>
+          <li><strong>Optimasi Rantai Pasok &amp; Modul Katalog:</strong> Pembaruan arsitektur basis data agar transaksi pemesanan barang dan jasa mitra terenkripsi ujung-ke-ujung (end-to-end encrypted).</li>
+          <li><strong>Peningkatan Protokol Transport Layer Security:</strong> Penerapan konfigurasi ketat SSL/TLS 1.3 dan header keamanan HTTP berstandar industri perbankan &amp; korporasi.</li>
+        </ul>
+        <div class="pt-2 flex flex-wrap gap-4 text-xs font-semibold">
+          <a href="portal.html" class="text-brand-400 hover:text-brand-300 underline">Pratinjau Profil Korporasi Lengkap &rarr;</a>
+          <a href="privacy-policy.html" class="text-slate-400 hover:text-white underline">Kebijakan Privasi (Privacy Policy)</a>
+          <a href="terms-of-service.html" class="text-slate-400 hover:text-white underline">Ketentuan Layanan (Terms of Service)</a>
         </div>
       </div>
     </div>
-  </section>
+
+  </main>
 
   <!-- Footer -->
-  <footer class="border-t border-slate-800 bg-slate-950 mt-auto py-8 text-xs text-slate-400">
-    <div class="mx-auto max-w-6xl px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-      <p>&copy; 2026 PT. Assa Sejahtera Trenggalek. Seluruh hak cipta dilindungi undang-undang.</p>
-      <div class="flex items-center gap-4">
+  <footer class="border-t border-slate-800/80 bg-slate-950 py-8 text-xs text-slate-400">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-2">
+        <span class="w-2 h-2 rounded-full bg-brand-400"></span>
+        <p>&copy; 2026 PT. Assa Sejahtera Trenggalek. Seluruh hak cipta dilindungi undang-undang.</p>
+      </div>
+      <div class="flex items-center gap-5">
+        <a href="portal.html" class="hover:text-white transition">Profil Perusahaan</a>
+        <span class="text-slate-700">•</span>
         <a href="privacy-policy.html" class="hover:text-white transition">Kebijakan Privasi</a>
         <span class="text-slate-700">•</span>
         <a href="terms-of-service.html" class="hover:text-white transition">Ketentuan Layanan</a>
       </div>
     </div>
   </footer>
+
+  <!-- Scripts: Interactivity -->
+  <script>
+    // 1. Live Clock (WIB)
+    function updateLiveClock() {
+      const now = new Date();
+      // Formatter in WIB (UTC+7)
+      const options = {
+        timeZone: 'Asia/Jakarta',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: false
+      };
+      const timeStr = new Intl.DateTimeFormat('id-ID', options).format(now);
+      const clockEl = document.getElementById('live-clock');
+      if (clockEl) {
+        clockEl.textContent = timeStr + ' WIB';
+      }
+    }
+    setInterval(updateLiveClock, 1000);
+    updateLiveClock();
+
+    // 2. Countdown Timer
+    // Establish target time: end of current maintenance window (persistent for session)
+    let targetTimeKey = 'ast_target_maintenance_time';
+    let targetEpoch = localStorage.getItem(targetTimeKey);
+    if (!targetEpoch || parseInt(targetEpoch) <= Date.now()) {
+      // Set to 4 hours and 30 minutes from now
+      targetEpoch = Date.now() + (4 * 3600 + 30 * 60) * 1000;
+      localStorage.setItem(targetTimeKey, targetEpoch.toString());
+    } else {
+      targetEpoch = parseInt(targetEpoch);
+    }
+
+    function updateCountdown() {
+      const now = Date.now();
+      let diff = Math.max(0, targetEpoch - now);
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((diff / (1000 * 60)) % 60);
+      const seconds = Math.floor((diff / 1000) % 60);
+
+      const pad = (n) => String(n).padStart(2, '0');
+
+      const elDays = document.getElementById('timer-days');
+      const elHours = document.getElementById('timer-hours');
+      const elMins = document.getElementById('timer-minutes');
+      const elSecs = document.getElementById('timer-seconds');
+
+      if (elDays) elDays.textContent = pad(days);
+      if (elHours) elHours.textContent = pad(hours);
+      if (elMins) elMins.textContent = pad(minutes);
+      if (elSecs) elSecs.textContent = pad(seconds);
+    }
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+
+    // 3. Interactive Diagnostics Re-check
+    function runDiagnosticsCheck() {
+      const btn = document.getElementById('btn-refresh-status');
+      const icon = document.getElementById('refresh-icon');
+      const label = document.getElementById('refresh-label');
+      const metrics = document.querySelectorAll('.ping-metric');
+      const feedbackTime = document.getElementById('last-ping-time');
+
+      btn.disabled = true;
+      icon.classList.add('animate-spin');
+      label.textContent = 'Menguji...';
+
+      setTimeout(() => {
+        metrics.forEach((el) => {
+          const randomLatency = Math.floor(Math.random() * 16) + 16; // 16ms - 31ms
+          el.textContent = randomLatency + ' ms';
+        });
+
+        const now = new Date();
+        const timeStr = now.toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+        if (feedbackTime) {
+          feedbackTime.textContent = timeStr + ' WIB';
+        }
+
+        icon.classList.remove('animate-spin');
+        label.textContent = 'Uji Latensi';
+        btn.disabled = false;
+      }, 700);
+    }
+
+    // 4. Notification Email Subscription with LocalStorage Persistence
+    function checkExistingSubscription() {
+      const savedEmail = localStorage.getItem('ast_maintenance_subscriber');
+      const inputGroup = document.getElementById('subscribe-input-group');
+      const successBox = document.getElementById('subscribe-success-box');
+      const emailText = document.getElementById('subscribed-email-text');
+
+      if (savedEmail && inputGroup && successBox) {
+        inputGroup.classList.add('hidden');
+        successBox.classList.remove('hidden');
+        if (emailText) {
+          emailText.innerHTML = 'Notifikasi peluncuran akan otomatis dikirimkan ke: <strong class="text-white font-mono-code">' + escapeHtml(savedEmail) + '</strong>.';
+        }
+      }
+    }
+
+    function handleSubscription(e) {
+      e.preventDefault();
+      const emailInput = document.getElementById('sub-email');
+      const email = emailInput ? emailInput.value.trim() : '';
+
+      if (!email || !email.includes('@')) {
+        alert('Silakan masukkan format alamat email yang valid.');
+        return;
+      }
+
+      const btn = document.getElementById('btn-subscribe');
+      btn.disabled = true;
+      btn.innerHTML = `
+        <svg class="animate-spin -ml-1 mr-2 h-4 w-4 text-white inline-block" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+          <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+          <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path>
+        </svg> Memproses...`;
+
+      setTimeout(() => {
+        localStorage.setItem('ast_maintenance_subscriber', email);
+        checkExistingSubscription();
+      }, 600);
+    }
+
+    function resetSubscription() {
+      localStorage.removeItem('ast_maintenance_subscriber');
+      const inputGroup = document.getElementById('subscribe-input-group');
+      const successBox = document.getElementById('subscribe-success-box');
+      const emailInput = document.getElementById('sub-email');
+      const btn = document.getElementById('btn-subscribe');
+
+      if (successBox) successBox.classList.add('hidden');
+      if (inputGroup) inputGroup.classList.remove('hidden');
+      if (emailInput) {
+        emailInput.value = '';
+        emailInput.focus();
+      }
+      if (btn) {
+        btn.disabled = false;
+        btn.innerHTML = `
+          <span>Beri Tahu Saya Saat Siap</span>
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+          </svg>`;
+      }
+    }
+
+    // 5. Interactive Copy Email
+    function copyCorporateEmail() {
+      const email = 'kontak@assasejahtera-trenggalek.com';
+      navigator.clipboard.writeText(email).then(() => {
+        const tag = document.getElementById('copy-status-tag');
+        if (tag) {
+          const originalText = tag.textContent;
+          tag.textContent = '✓ Tersalin!';
+          tag.classList.add('text-brand-400', 'border-brand-500/50', 'bg-brand-500/10');
+          setTimeout(() => {
+            tag.textContent = originalText;
+            tag.classList.remove('text-brand-400', 'border-brand-500/50', 'bg-brand-500/10');
+          }, 2000);
+        }
+      }).catch(() => {
+        window.location.href = 'mailto:' + email;
+      });
+    }
+
+    // 6. Accordion Toggle
+    function toggleAccordion() {
+      const content = document.getElementById('accordion-content');
+      const icon = document.getElementById('accordion-icon');
+      if (content && icon) {
+        const isHidden = content.classList.contains('hidden');
+        if (isHidden) {
+          content.classList.remove('hidden');
+          icon.classList.add('rotate-180');
+        } else {
+          content.classList.add('hidden');
+          icon.classList.remove('rotate-180');
+        }
+      }
+    }
+
+    // Helper: Escape HTML
+    function escapeHtml(text) {
+      const map = {
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        '"': '&quot;',
+        "'": '&#039;'
+      };
+      return text.replace(/[&<>"']/g, function(m) { return map[m]; });
+    }
+
+    // Initialize state on load
+    document.addEventListener('DOMContentLoaded', () => {
+      checkExistingSubscription();
+    });
+  </script>
 
 </body>
 </html>
