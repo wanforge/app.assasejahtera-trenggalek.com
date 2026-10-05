@@ -18,21 +18,17 @@
         extend: {
           colors: {
             brand: {
-              50: '#f0fdf4',
-              100: '#dcfce7',
-              200: '#bbf7d0',
-              300: '#86efac',
-              400: '#4ade80',
-              500: '#22c55e',
-              600: '#16a34a',
-              700: '#15803d',
-              800: '#166534',
-              900: '#14532d',
-              950: '#052e16'
-            },
-            accent: {
-              500: '#0284c7',
-              600: '#0369a1'
+              50: '#ecfdf5',
+              100: '#d1fae5',
+              200: '#a7f3d0',
+              300: '#6ee7b7',
+              400: '#34d399',
+              500: '#10b981',
+              600: '#059669',
+              700: '#047857',
+              800: '#065f46',
+              900: '#064e3b',
+              950: '#022c22'
             }
           }
         }
@@ -45,33 +41,27 @@
     .font-mono-code { font-family: 'JetBrains Mono', monospace; }
   </style>
 </head>
-<body class="bg-slate-950 text-slate-100 antialiased selection:bg-brand-600 selection:text-white min-h-screen flex flex-col justify-between relative overflow-x-hidden">
-
-  <!-- Ambient Glow Background -->
-  <div class="fixed inset-0 pointer-events-none -z-10 overflow-hidden">
-    <div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[700px] h-[500px] bg-gradient-to-b from-brand-600/15 via-emerald-900/10 to-transparent blur-3xl opacity-70"></div>
-    <div class="absolute bottom-0 right-0 w-[500px] h-[400px] bg-emerald-950/20 blur-3xl opacity-50"></div>
-  </div>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-brand-600 selection:text-white min-h-screen flex flex-col justify-between">
 
   <!-- Header -->
-  <header class="border-b border-slate-800/80 bg-slate-950/80 backdrop-blur-md sticky top-0 z-40">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+  <header class="border-b border-slate-200/80 bg-white/95 backdrop-blur-md sticky top-0 z-40">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
       <a href="index.html" class="flex items-center gap-3">
-        <span class="grid h-10 w-10 place-items-center rounded-xl bg-brand-600 text-sm font-extrabold tracking-tight text-white shadow-md shadow-brand-900/40">AST</span>
+        <span class="grid h-10 w-10 place-items-center rounded-xl bg-brand-600 text-sm font-extrabold tracking-tight text-white shadow-sm">AST</span>
         <div>
-          <span class="block text-sm font-extrabold tracking-tight text-white sm:text-base leading-tight">Assa Sejahtera</span>
-          <span class="block text-[11px] font-medium text-slate-400">Trenggalek, Jawa Timur</span>
+          <span class="block text-sm font-extrabold tracking-tight text-slate-900 sm:text-base leading-tight">Assa Sejahtera</span>
+          <span class="block text-[11px] font-medium text-slate-500">Trenggalek, Jawa Timur</span>
         </div>
       </a>
 
-      <!-- Live Clock & Status Pill -->
+      <!-- Live Clock & Status Badge -->
       <div class="flex items-center gap-3">
-        <div class="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-full border border-slate-800 bg-slate-900/80 text-xs text-slate-300">
+        <div class="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-slate-200 bg-slate-100/70 text-xs text-slate-600 font-medium">
           <span class="text-slate-400">WIB:</span>
-          <span id="live-clock" class="font-mono-code font-medium text-brand-400">--:--:--</span>
+          <span id="live-clock" class="font-mono-code font-semibold text-slate-800">--:--:--</span>
         </div>
-        <div class="inline-flex items-center gap-2 rounded-full border border-amber-500/30 bg-amber-500/10 px-3 py-1.5 text-xs font-semibold text-amber-400">
-          <span class="h-2 w-2 rounded-full bg-amber-400 animate-ping"></span>
+        <div class="inline-flex items-center gap-2 rounded-lg border border-amber-200 bg-amber-50 px-3 py-1.5 text-xs font-semibold text-amber-800">
+          <span class="h-2 w-2 rounded-full bg-amber-500 animate-pulse"></span>
           <span>Pemeliharaan Aktif</span>
         </div>
       </div>
@@ -79,87 +69,89 @@
   </header>
 
   <!-- Main Content -->
-  <main class="max-w-5xl mx-auto px-4 sm:px-6 py-10 sm:py-16 flex-grow w-full">
+  <main class="max-w-5xl mx-auto px-4 sm:px-6 py-10 sm:py-14 flex-grow w-full space-y-8">
 
     <!-- Hero Card -->
-    <div class="rounded-3xl border border-slate-800 bg-slate-900/70 p-6 sm:p-12 shadow-2xl backdrop-blur-xl relative overflow-hidden mb-8">
-      <div class="absolute -right-16 -top-16 w-56 h-56 bg-brand-500/10 rounded-full blur-3xl pointer-events-none"></div>
-
-      <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 pb-8 border-b border-slate-800">
-        <div>
-          <div class="inline-flex items-center gap-2 rounded-lg border border-brand-500/30 bg-brand-500/10 px-3 py-1 text-xs font-semibold text-brand-300 mb-3">
-            <span class="h-1.5 w-1.5 rounded-full bg-brand-400"></span>
-            Pembaruan Infrastruktur Terencana v2.4
+    <div class="rounded-2xl border border-slate-200 bg-white p-6 sm:p-10 shadow-sm relative overflow-hidden">
+      <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 pb-8 border-b border-slate-100">
+        <div class="space-y-3">
+          <div class="inline-flex items-center gap-2 rounded-full border border-brand-200 bg-brand-50 px-3 py-1 text-xs font-semibold text-brand-800">
+            <span class="h-1.5 w-1.5 rounded-full bg-brand-600"></span>
+            Pembaruan Infrastruktur Terjadwal
           </div>
-          <h1 class="text-2xl sm:text-4xl font-extrabold text-white tracking-tight leading-tight">
+          <h1 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
             Peningkatan Kapasitas &amp; Sistem Digital
           </h1>
-          <p class="mt-3 text-slate-300 text-sm sm:text-base leading-relaxed max-w-2xl">
-            Portal resmi <strong>PT. Assa Sejahtera Trenggalek</strong> sedang dalam pembaruan berkala. Kami memperkuat arsitektur server, integrasi Google OAuth 2.0, serta pengamanan transaksi pengadaan barang dan perdagangan umum untuk memastikan keandalan terbaik bagi seluruh mitra.
+          <p class="text-slate-600 text-sm sm:text-base leading-relaxed max-w-2xl">
+            Portal resmi <strong>PT. Assa Sejahtera Trenggalek</strong> sedang dalam pemeliharaan berkala untuk penguatan arsitektur server, integrasi Google OAuth 2.0, dan peningkatan keamanan transaksi rantai pasok demi kenyamanan seluruh mitra usaha.
           </p>
         </div>
 
-        <!-- Quick Status Badge Box -->
-        <div class="w-full md:w-auto shrink-0 bg-slate-950/60 border border-slate-800 rounded-2xl p-4 sm:p-5 flex flex-col gap-2">
-          <span class="text-[11px] font-bold uppercase tracking-wider text-slate-400">Estimasi Selesai</span>
-          <span class="text-lg font-bold text-white flex items-center gap-2">
-            <svg class="w-5 h-5 text-brand-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <!-- Target Selesai Box -->
+        <div class="w-full md:w-auto shrink-0 bg-slate-50 border border-slate-200 rounded-xl p-4 sm:p-5 flex flex-col gap-1.5">
+          <span class="text-[11px] font-bold uppercase tracking-wider text-slate-500">Estimasi Selesai</span>
+          <span class="text-lg font-bold text-slate-900 flex items-center gap-2">
+            <svg class="w-5 h-5 text-brand-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
             <span id="target-time-display">Hari ini, 23:59 WIB</span>
           </span>
-          <span class="text-xs text-slate-400">Prioritas keamanan transaksi mitra</span>
+          <span class="text-xs text-slate-500">Prioritas kelancaran transaksi mitra</span>
         </div>
       </div>
 
-      <!-- Interactive Countdown & Progress Bar -->
+      <!-- Countdown & Progress Bar -->
       <div class="pt-8">
         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
-          <span class="text-xs font-bold uppercase tracking-wider text-slate-300">Hitung Mundur Estimasi Pemulihan</span>
-          <span class="text-xs font-mono-code text-brand-400 font-semibold" id="progress-percentage-label">Progres: 88% Selesai</span>
+          <span class="text-xs font-bold uppercase tracking-wider text-slate-700">Waktu Menuju Pemulihan Layanan</span>
+          <span class="text-xs font-mono-code text-brand-700 font-semibold" id="progress-percentage-label">Progres: 88% Selesai</span>
         </div>
 
-        <!-- Countdown Blocks -->
-        <div class="grid grid-cols-4 gap-2 sm:gap-4 mb-6">
-          <div class="rounded-xl border border-slate-800 bg-slate-950/80 p-3 sm:p-4 text-center">
-            <div id="timer-days" class="text-xl sm:text-3xl font-extrabold text-white font-mono-code">00</div>
-            <div class="text-[10px] sm:text-xs text-slate-400 uppercase tracking-wider mt-1 font-semibold">Hari</div>
+        <!-- Countdown Grid -->
+        <div class="grid grid-cols-4 gap-2 sm:gap-4 mb-5">
+          <div class="rounded-xl border border-slate-200 bg-slate-50 p-3 sm:p-4 text-center">
+            <div id="timer-days" class="text-xl sm:text-3xl font-extrabold text-slate-900 font-mono-code">00</div>
+            <div class="text-[10px] sm:text-xs text-slate-500 uppercase tracking-wider mt-1 font-semibold">Hari</div>
           </div>
-          <div class="rounded-xl border border-slate-800 bg-slate-950/80 p-3 sm:p-4 text-center">
-            <div id="timer-hours" class="text-xl sm:text-3xl font-extrabold text-white font-mono-code">04</div>
-            <div class="text-[10px] sm:text-xs text-slate-400 uppercase tracking-wider mt-1 font-semibold">Jam</div>
+          <div class="rounded-xl border border-slate-200 bg-slate-50 p-3 sm:p-4 text-center">
+            <div id="timer-hours" class="text-xl sm:text-3xl font-extrabold text-slate-900 font-mono-code">04</div>
+            <div class="text-[10px] sm:text-xs text-slate-500 uppercase tracking-wider mt-1 font-semibold">Jam</div>
           </div>
-          <div class="rounded-xl border border-slate-800 bg-slate-950/80 p-3 sm:p-4 text-center">
-            <div id="timer-minutes" class="text-xl sm:text-3xl font-extrabold text-white font-mono-code">25</div>
-            <div class="text-[10px] sm:text-xs text-slate-400 uppercase tracking-wider mt-1 font-semibold">Menit</div>
+          <div class="rounded-xl border border-slate-200 bg-slate-50 p-3 sm:p-4 text-center">
+            <div id="timer-minutes" class="text-xl sm:text-3xl font-extrabold text-slate-900 font-mono-code">25</div>
+            <div class="text-[10px] sm:text-xs text-slate-500 uppercase tracking-wider mt-1 font-semibold">Menit</div>
           </div>
-          <div class="rounded-xl border border-slate-800 bg-slate-950/80 p-3 sm:p-4 text-center">
-            <div id="timer-seconds" class="text-xl sm:text-3xl font-extrabold text-brand-400 font-mono-code">18</div>
-            <div class="text-[10px] sm:text-xs text-slate-400 uppercase tracking-wider mt-1 font-semibold">Detik</div>
+          <div class="rounded-xl border border-slate-200 bg-slate-50 p-3 sm:p-4 text-center">
+            <div id="timer-seconds" class="text-xl sm:text-3xl font-extrabold text-brand-600 font-mono-code">18</div>
+            <div class="text-[10px] sm:text-xs text-slate-500 uppercase tracking-wider mt-1 font-semibold">Detik</div>
           </div>
         </div>
 
-        <!-- Progress Bar Track -->
-        <div class="w-full bg-slate-950 rounded-full h-3 p-0.5 border border-slate-800 overflow-hidden">
-          <div id="main-progress-bar" class="bg-gradient-to-r from-brand-600 via-emerald-500 to-teal-400 h-full rounded-full transition-all duration-1000 ease-out" style="width: 88%"></div>
+        <!-- Progress Track -->
+        <div class="w-full bg-slate-100 rounded-full h-2.5 overflow-hidden border border-slate-200/80">
+          <div id="main-progress-bar" class="bg-brand-600 h-full rounded-full transition-all duration-1000 ease-out" style="width: 88%"></div>
         </div>
-        <p class="text-[11px] text-slate-400 mt-2 text-right">Tahap saat ini: Verifikasi Integritas Data &amp; Pengujian Latensi API</p>
+        <p class="text-[11px] text-slate-500 mt-2 text-right">Tahap saat ini: Verifikasi Integritas Data &amp; Sinkronisasi Gateway API</p>
       </div>
     </div>
 
-    <!-- Two Columns: Interactive Health Matrix & Interactive Notification Form -->
-    <div class="grid md:grid-cols-12 gap-8 mb-8">
+    <!-- 2 Columns: Live Diagnostics & Notification Form -->
+    <div class="grid md:grid-cols-12 gap-8">
 
-      <!-- Column 1: Interactive System Diagnostics (7 cols) -->
-      <div class="md:col-span-7 rounded-3xl border border-slate-800 bg-slate-900/60 p-6 sm:p-8 flex flex-col justify-between">
+      <!-- Column 1: Diagnostics (7 cols) -->
+      <div class="md:col-span-7 rounded-2xl border border-slate-200 bg-white p-6 sm:p-7 flex flex-col justify-between shadow-sm">
         <div>
           <div class="flex items-center justify-between mb-4">
             <div>
-              <span class="text-xs font-bold uppercase tracking-wider text-brand-400">Diagnostik Modul</span>
-              <h2 class="text-lg sm:text-xl font-bold text-white">Status Layanan &amp; Infrastruktur</h2>
+              <span class="text-xs font-bold uppercase tracking-wider text-brand-700">Diagnostik Modul</span>
+              <h2 class="text-lg font-bold text-slate-900">Status Layanan &amp; Infrastruktur</h2>
             </div>
-            <button id="btn-refresh-status" onclick="runDiagnosticsCheck()" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-slate-700 bg-slate-800 hover:bg-slate-700 text-xs font-semibold text-slate-200 transition active:scale-95">
-              <svg id="refresh-icon" class="w-3.5 h-3.5 text-slate-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <button
+              id="btn-refresh-status"
+              onclick="runDiagnosticsCheck()"
+              class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-slate-200 bg-slate-50 hover:bg-slate-100 text-xs font-semibold text-slate-700 transition active:scale-95 shadow-sm"
+            >
+              <svg id="refresh-icon" class="w-3.5 h-3.5 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
               </svg>
               <span id="refresh-label">Uji Latensi</span>
@@ -168,123 +160,121 @@
 
           <!-- Module List -->
           <div class="space-y-3 mt-4" id="modules-container">
-            <!-- Modul 1 -->
-            <div class="p-3.5 rounded-xl border border-slate-800/90 bg-slate-950/60 flex items-center justify-between gap-3">
+            <!-- Module 1 -->
+            <div class="p-3.5 rounded-xl border border-slate-200 bg-slate-50/60 flex items-center justify-between gap-3">
               <div class="flex items-center gap-3">
-                <div class="h-2.5 w-2.5 rounded-full bg-emerald-400"></div>
+                <div class="h-2.5 w-2.5 rounded-full bg-emerald-500"></div>
                 <div>
-                  <h3 class="text-xs font-bold text-white">Portal Web &amp; SSL Enkripsi TLS 1.3</h3>
-                  <p class="text-[11px] text-slate-400">Katalog korporat &amp; halaman publik</p>
+                  <h3 class="text-xs font-bold text-slate-900">Portal Web &amp; SSL Enkripsi TLS 1.3</h3>
+                  <p class="text-[11px] text-slate-500">Katalog korporat &amp; halaman publik</p>
                 </div>
               </div>
               <div class="text-right">
-                <span class="inline-block px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">Aktif</span>
-                <span class="block text-[10px] font-mono-code text-slate-400 ping-metric">19 ms</span>
+                <span class="inline-block px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-100 text-emerald-800 border border-emerald-200">Aktif</span>
+                <span class="block text-[10px] font-mono-code text-slate-500 ping-metric">18 ms</span>
               </div>
             </div>
 
-            <!-- Modul 2 -->
-            <div class="p-3.5 rounded-xl border border-slate-800/90 bg-slate-950/60 flex items-center justify-between gap-3">
+            <!-- Module 2 -->
+            <div class="p-3.5 rounded-xl border border-slate-200 bg-slate-50/60 flex items-center justify-between gap-3">
               <div class="flex items-center gap-3">
-                <div class="h-2.5 w-2.5 rounded-full bg-amber-400 animate-pulse"></div>
+                <div class="h-2.5 w-2.5 rounded-full bg-amber-500 animate-pulse"></div>
                 <div>
-                  <h3 class="text-xs font-bold text-white">Google OAuth 2.0 Auth Bridge</h3>
-                  <p class="text-[11px] text-slate-400">Audit kepatuhan izin (openid, email, profile)</p>
+                  <h3 class="text-xs font-bold text-slate-900">Google OAuth 2.0 Auth Bridge</h3>
+                  <p class="text-[11px] text-slate-500">Audit kepatuhan izin (openid, email, profile)</p>
                 </div>
               </div>
               <div class="text-right">
-                <span class="inline-block px-2 py-0.5 rounded text-[10px] font-bold bg-amber-500/10 text-amber-400 border border-amber-500/20">Sinkronisasi</span>
-                <span class="block text-[10px] font-mono-code text-slate-400 ping-metric">28 ms</span>
+                <span class="inline-block px-2 py-0.5 rounded text-[10px] font-bold bg-amber-100 text-amber-800 border border-amber-200">Sinkronisasi</span>
+                <span class="block text-[10px] font-mono-code text-slate-500 ping-metric">26 ms</span>
               </div>
             </div>
 
-            <!-- Modul 3 -->
-            <div class="p-3.5 rounded-xl border border-slate-800/90 bg-slate-950/60 flex items-center justify-between gap-3">
+            <!-- Module 3 -->
+            <div class="p-3.5 rounded-xl border border-slate-200 bg-slate-50/60 flex items-center justify-between gap-3">
               <div class="flex items-center gap-3">
-                <div class="h-2.5 w-2.5 rounded-full bg-amber-400 animate-pulse"></div>
+                <div class="h-2.5 w-2.5 rounded-full bg-amber-500 animate-pulse"></div>
                 <div>
-                  <h3 class="text-xs font-bold text-white">Database Transaksi &amp; Rantai Pasok</h3>
-                  <p class="text-[11px] text-slate-400">Indeksasi pengadaan &amp; optimasi query</p>
+                  <h3 class="text-xs font-bold text-slate-900">Database Transaksi &amp; Rantai Pasok</h3>
+                  <p class="text-[11px] text-slate-500">Indeksasi pengadaan &amp; optimasi performa</p>
                 </div>
               </div>
               <div class="text-right">
-                <span class="inline-block px-2 py-0.5 rounded text-[10px] font-bold bg-amber-500/10 text-amber-400 border border-amber-500/20">Optimasi</span>
-                <span class="block text-[10px] font-mono-code text-slate-400 ping-metric">34 ms</span>
+                <span class="inline-block px-2 py-0.5 rounded text-[10px] font-bold bg-amber-100 text-amber-800 border border-amber-200">Optimasi</span>
+                <span class="block text-[10px] font-mono-code text-slate-500 ping-metric">32 ms</span>
               </div>
             </div>
 
-            <!-- Modul 4 -->
-            <div class="p-3.5 rounded-xl border border-slate-800/90 bg-slate-950/60 flex items-center justify-between gap-3">
+            <!-- Module 4 -->
+            <div class="p-3.5 rounded-xl border border-slate-200 bg-slate-50/60 flex items-center justify-between gap-3">
               <div class="flex items-center gap-3">
-                <div class="h-2.5 w-2.5 rounded-full bg-emerald-400"></div>
+                <div class="h-2.5 w-2.5 rounded-full bg-emerald-500"></div>
                 <div>
-                  <h3 class="text-xs font-bold text-white">Server Korespondensi &amp; Notifikasi Resmi</h3>
-                  <p class="text-[11px] text-slate-400">SMTP Gateway kontak@assasejahtera-trenggalek.com</p>
+                  <h3 class="text-xs font-bold text-slate-900">Server Korespondensi &amp; Notifikasi Resmi</h3>
+                  <p class="text-[11px] text-slate-500">SMTP Gateway kontak@assasejahtera-trenggalek.com</p>
                 </div>
               </div>
               <div class="text-right">
-                <span class="inline-block px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">Siaga Normal</span>
-                <span class="block text-[10px] font-mono-code text-slate-400 ping-metric">22 ms</span>
+                <span class="inline-block px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-100 text-emerald-800 border border-emerald-200">Siaga Normal</span>
+                <span class="block text-[10px] font-mono-code text-slate-500 ping-metric">21 ms</span>
               </div>
             </div>
           </div>
         </div>
 
-        <div id="diagnostic-feedback" class="mt-4 pt-4 border-t border-slate-800/70 text-xs text-slate-400 flex items-center justify-between">
-          <span>Terakhir diperiksa: <strong id="last-ping-time" class="text-slate-300 font-mono-code">Otomatis</strong></span>
-          <span class="text-emerald-400 font-semibold flex items-center gap-1">
-            <span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span> Integritas 100% Terjaga
+        <div id="diagnostic-feedback" class="mt-4 pt-4 border-t border-slate-100 text-xs text-slate-500 flex items-center justify-between">
+          <span>Terakhir diperiksa: <strong id="last-ping-time" class="text-slate-800 font-mono-code">Otomatis</strong></span>
+          <span class="text-brand-700 font-semibold flex items-center gap-1.5">
+            <span class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span> Integritas 100% Terjaga
           </span>
         </div>
       </div>
 
-      <!-- Column 2: Notification Subscription & Quick Support (5 cols) -->
-      <div class="md:col-span-5 flex flex-col gap-6">
+      <!-- Column 2: Notification & Emergency Contact (5 cols) -->
+      <div class="md:col-span-5 space-y-6">
 
-        <!-- Subscribe Card -->
-        <div class="rounded-3xl border border-slate-800 bg-slate-900/60 p-6 sm:p-7">
-          <span class="text-xs font-bold uppercase tracking-wider text-brand-400">Notifikasi Otomatis</span>
-          <h2 class="text-lg font-bold text-white mt-1">Dapatkan Notifikasi Saat Portal Kembali Daring</h2>
-          <p class="text-xs text-slate-300 mt-2 leading-relaxed">
-            Daftarkan email korporat Anda untuk menerima pemberitahuan prioritas segera setelah seluruh sistem aktif penuh.
+        <!-- Subscribe Box -->
+        <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+          <span class="text-xs font-bold uppercase tracking-wider text-brand-700">Notifikasi Peluncuran</span>
+          <h2 class="text-base font-bold text-slate-900 mt-1">Beri Tahu Saya Saat Kembali Daring</h2>
+          <p class="text-xs text-slate-600 mt-1.5 leading-relaxed">
+            Daftarkan email resmi Anda untuk menerima informasi langsung begitu seluruh modul portal siap digunakan.
           </p>
 
           <form id="subscribe-form" onsubmit="handleSubscription(event)" class="mt-4 space-y-3">
             <div id="subscribe-input-group">
               <label for="sub-email" class="sr-only">Alamat Email Resmi</label>
-              <div class="relative">
-                <input
-                  type="email"
-                  id="sub-email"
-                  required
-                  placeholder="nama@perusahaan.com"
-                  class="w-full rounded-xl border border-slate-700 bg-slate-950 px-4 py-3 text-xs sm:text-sm text-white placeholder-slate-500 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500 transition"
-                >
-              </div>
+              <input
+                type="email"
+                id="sub-email"
+                required
+                placeholder="nama@perusahaan.com"
+                class="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-2.5 text-xs sm:text-sm text-slate-900 placeholder-slate-400 focus:bg-white focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500 transition"
+              >
               <button
                 type="submit"
                 id="btn-subscribe"
-                class="w-full mt-2 rounded-xl bg-brand-600 hover:bg-brand-500 px-4 py-3 text-xs sm:text-sm font-semibold text-white shadow-lg shadow-brand-900/40 transition active:scale-[0.98] flex items-center justify-center gap-2"
+                class="w-full mt-2.5 rounded-xl bg-brand-600 hover:bg-brand-700 px-4 py-2.5 text-xs sm:text-sm font-semibold text-white shadow-sm transition active:scale-[0.98] flex items-center justify-center gap-2"
               >
-                <span>Beri Tahu Saya Saat Siap</span>
+                <span>Daftarkan Email</span>
                 <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                 </svg>
               </button>
             </div>
 
-            <!-- Success State Box (Hidden by default) -->
-            <div id="subscribe-success-box" class="hidden p-4 rounded-xl border border-brand-500/30 bg-brand-500/10 space-y-2">
-              <div class="flex items-center gap-2 text-brand-400 font-bold text-xs sm:text-sm">
-                <svg class="w-5 h-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <!-- Success Box -->
+            <div id="subscribe-success-box" class="hidden p-4 rounded-xl border border-emerald-200 bg-emerald-50 space-y-2">
+              <div class="flex items-center gap-2 text-emerald-800 font-bold text-xs sm:text-sm">
+                <svg class="w-4 h-4 text-emerald-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                 </svg>
                 <span>Email Anda Telah Terdaftar</span>
               </div>
-              <p class="text-xs text-slate-300" id="subscribed-email-text">
+              <p class="text-xs text-slate-600" id="subscribed-email-text">
                 Notifikasi peluncuran akan otomatis dikirimkan ke alamat Anda.
               </p>
-              <button type="button" onclick="resetSubscription()" class="text-[11px] text-slate-400 hover:text-white underline mt-1">
+              <button type="button" onclick="resetSubscription()" class="text-[11px] text-brand-700 hover:text-brand-900 font-medium underline mt-1">
                 Ganti atau daftarkan email lain
               </button>
             </div>
@@ -292,57 +282,57 @@
         </div>
 
         <!-- Emergency Contact Card -->
-        <div class="rounded-3xl border border-slate-800 bg-slate-900/60 p-6 sm:p-7 space-y-4">
+        <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm space-y-4">
           <div>
-            <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Kebutuhan Mendesak</span>
-            <h3 class="text-base font-bold text-white mt-1">Layanan Informasi &amp; Pengadaan Darurat</h3>
-            <p class="text-xs text-slate-300 mt-1 leading-relaxed">
-              Tim pengadaan dan administrasi operasional kami tetap dapat dihubungi melalui kanal resmi selama masa pemeliharaan:
+            <span class="text-xs font-bold uppercase tracking-wider text-slate-500">Layanan Mendesak</span>
+            <h3 class="text-base font-bold text-slate-900 mt-1">Kontak Darurat &amp; Tim Operasional</h3>
+            <p class="text-xs text-slate-600 mt-1 leading-relaxed">
+              Tim pengadaan barang dan administrasi tetap siaga melalui kanal berikut:
             </p>
           </div>
 
-          <div class="space-y-2">
+          <div class="space-y-2.5">
             <!-- Copy Email Button -->
             <button
               onclick="copyCorporateEmail()"
               id="btn-copy-email"
-              class="w-full flex items-center justify-between p-3 rounded-xl border border-slate-800 bg-slate-950/70 hover:bg-slate-800/80 transition text-left group"
+              class="w-full flex items-center justify-between p-3 rounded-xl border border-slate-200 bg-slate-50 hover:bg-slate-100 transition text-left group"
             >
               <div class="flex items-center gap-3">
-                <div class="w-8 h-8 rounded-lg bg-brand-500/10 text-brand-400 flex items-center justify-center shrink-0">
+                <div class="w-8 h-8 rounded-lg bg-brand-100 text-brand-700 flex items-center justify-center shrink-0">
                   <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
                 </div>
                 <div>
-                  <span class="block text-xs font-semibold text-white">Email Resmi</span>
-                  <span class="block text-[11px] text-slate-400 group-hover:text-brand-300 font-mono-code transition">kontak@assasejahtera-trenggalek.com</span>
+                  <span class="block text-xs font-semibold text-slate-900">Email Korespondensi</span>
+                  <span class="block text-[11px] text-slate-500 group-hover:text-brand-700 font-mono-code transition">kontak@assasejahtera-trenggalek.com</span>
                 </div>
               </div>
-              <span id="copy-status-tag" class="text-[11px] font-semibold text-slate-400 border border-slate-700 px-2 py-0.5 rounded group-hover:border-slate-500 transition">
+              <span id="copy-status-tag" class="text-[11px] font-semibold text-slate-600 border border-slate-200 bg-white px-2 py-0.5 rounded shadow-sm group-hover:border-slate-400 transition">
                 Salin
               </span>
             </button>
 
-            <!-- WhatsApp Direct Link -->
+            <!-- WhatsApp Link -->
             <a
               href="https://wa.me/6281335000000?text=Halo%20Admin%20PT.%20Assa%20Sejahtera%20Trenggalek,%20saya%20ingin%20menanyakan%20perihal%20kemitraan/layanan."
               target="_blank"
               rel="noopener noreferrer"
-              class="w-full flex items-center justify-between p-3 rounded-xl border border-slate-800 bg-slate-950/70 hover:bg-slate-800/80 transition text-left group"
+              class="w-full flex items-center justify-between p-3 rounded-xl border border-slate-200 bg-slate-50 hover:bg-slate-100 transition text-left group"
             >
               <div class="flex items-center gap-3">
-                <div class="w-8 h-8 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center shrink-0">
+                <div class="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0">
                   <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.669-.7c.974.553 2.083.847 3.204.847h.005c3.181 0 5.767-2.586 5.768-5.766 0-1.54-.6-2.988-1.688-4.077-1.089-1.089-2.537-1.688-4.077-1.688zm0-2c4.288 0 7.768 3.48 7.768 7.766 0 2.073-.807 4.022-2.274 5.489s-3.415 2.275-5.488 2.275c-1.285 0-2.544-.316-3.668-.916L4 20l1.416-4.321c-.658-1.161-1.004-2.477-1.004-3.741 0-4.286 3.48-7.766 7.619-7.766z" />
                   </svg>
                 </div>
                 <div>
-                  <span class="block text-xs font-semibold text-white">Layanan WhatsApp Tim Cepat</span>
-                  <span class="block text-[11px] text-slate-400 group-hover:text-emerald-300 transition">Respons pesan kemitraan darurat</span>
+                  <span class="block text-xs font-semibold text-slate-900">WhatsApp Resmi Admin</span>
+                  <span class="block text-[11px] text-slate-500 group-hover:text-emerald-700 transition">Respons cepat kemitraan &amp; pengadaan</span>
                 </div>
               </div>
-              <span class="text-slate-400 group-hover:text-white transition">&rarr;</span>
+              <span class="text-slate-400 group-hover:text-slate-800 transition">&rarr;</span>
             </a>
           </div>
         </div>
@@ -350,41 +340,41 @@
       </div>
     </div>
 
-    <!-- Interactive Scope & Details Accordion -->
-    <div class="rounded-3xl border border-slate-800 bg-slate-900/60 p-6 sm:p-8">
+    <!-- Accordion Section -->
+    <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
       <button
         onclick="toggleAccordion()"
         class="w-full flex items-center justify-between text-left group focus:outline-none"
       >
         <div class="flex items-center gap-3">
-          <div class="w-8 h-8 rounded-xl bg-slate-800 text-brand-400 flex items-center justify-center font-bold text-xs">
+          <div class="w-8 h-8 rounded-lg bg-slate-100 text-brand-700 flex items-center justify-center font-bold text-xs border border-slate-200">
             AST
           </div>
           <div>
-            <h3 class="text-sm sm:text-base font-bold text-white group-hover:text-brand-300 transition">
+            <h3 class="text-sm sm:text-base font-bold text-slate-900 group-hover:text-brand-700 transition">
               Cakupan Pembaruan Sistem &amp; Kepatuhan Regulasi
             </h3>
-            <p class="text-xs text-slate-400">Klik untuk melihat rincian teknis pekerjaan yang sedang berlangsung</p>
+            <p class="text-xs text-slate-500">Klik untuk melihat rincian pembaruan teknis</p>
           </div>
         </div>
-        <svg id="accordion-icon" class="w-5 h-5 text-slate-400 group-hover:text-white transition transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <svg id="accordion-icon" class="w-5 h-5 text-slate-400 group-hover:text-slate-700 transition transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
         </svg>
       </button>
 
-      <div id="accordion-content" class="hidden mt-6 pt-6 border-t border-slate-800 text-xs sm:text-sm text-slate-300 space-y-4 leading-relaxed">
+      <div id="accordion-content" class="hidden mt-6 pt-6 border-t border-slate-100 text-xs sm:text-sm text-slate-600 space-y-3 leading-relaxed">
         <p>
-          Pemeliharaan terjadwal ini mencakup beberapa peningkatan kritis demi menjamin operasional PT. Assa Sejahtera Trenggalek berjalan dengan tingkat keamanan maksimal:
+          Peningkatan sistem terencana mencakup beberapa aspek penting demi memastikan keandalan serta keamanan data:
         </p>
-        <ul class="list-disc pl-5 space-y-2 text-slate-300 text-xs sm:text-sm">
-          <li><strong>Audit Kepatuhan Google Cloud Console OAuth 2.0:</strong> Memastikan implementasi verifikasi identitas memenuhi secara mutlak <em>Google API Services User Data Policy</em> (Limited Use Requirement) tanpa kebocoran data pihak ketiga.</li>
-          <li><strong>Optimasi Rantai Pasok &amp; Modul Katalog:</strong> Pembaruan arsitektur basis data agar transaksi pemesanan barang dan jasa mitra terenkripsi ujung-ke-ujung (end-to-end encrypted).</li>
-          <li><strong>Peningkatan Protokol Transport Layer Security:</strong> Penerapan konfigurasi ketat SSL/TLS 1.3 dan header keamanan HTTP berstandar industri perbankan &amp; korporasi.</li>
+        <ul class="list-disc pl-5 space-y-1.5 text-slate-600 text-xs sm:text-sm">
+          <li><strong>Audit Kepatuhan Google Cloud Console OAuth 2.0:</strong> Memastikan penanganan identitas digital sesuai ketentuan <em>Google API Services User Data Policy</em> (Limited Use Requirement).</li>
+          <li><strong>Optimasi Rantai Pasok &amp; Modul Katalog:</strong> Pembaruan basis data untuk kecepatan akses informasi pengadaan barang dan jasa.</li>
+          <li><strong>Peningkatan Protokol Transport Layer Security:</strong> Penerapan konfigurasi ketat SSL/TLS 1.3 demi enkripsi jalur data yang aman.</li>
         </ul>
         <div class="pt-2 flex flex-wrap gap-4 text-xs font-semibold">
-          <a href="portal.html" class="text-brand-400 hover:text-brand-300 underline">Pratinjau Profil Korporasi Lengkap &rarr;</a>
-          <a href="privacy-policy.html" class="text-slate-400 hover:text-white underline">Kebijakan Privasi (Privacy Policy)</a>
-          <a href="terms-of-service.html" class="text-slate-400 hover:text-white underline">Ketentuan Layanan (Terms of Service)</a>
+          <a href="portal.html" class="text-brand-700 hover:text-brand-900 underline">Pratinjau Profil Korporasi Lengkap &rarr;</a>
+          <a href="privacy-policy.html" class="text-slate-600 hover:text-slate-900 underline">Kebijakan Privasi (Privacy Policy)</a>
+          <a href="terms-of-service.html" class="text-slate-600 hover:text-slate-900 underline">Ketentuan Layanan (Terms of Service)</a>
         </div>
       </div>
     </div>
@@ -392,18 +382,18 @@
   </main>
 
   <!-- Footer -->
-  <footer class="border-t border-slate-800/80 bg-slate-950 py-8 text-xs text-slate-400">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+  <footer class="border-t border-slate-200 bg-white py-6 text-xs text-slate-500">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
       <div class="flex items-center gap-2">
-        <span class="w-2 h-2 rounded-full bg-brand-400"></span>
+        <span class="w-2 h-2 rounded-full bg-brand-600"></span>
         <p>&copy; 2026 PT. Assa Sejahtera Trenggalek. Seluruh hak cipta dilindungi undang-undang.</p>
       </div>
       <div class="flex items-center gap-5">
-        <a href="portal.html" class="hover:text-white transition">Profil Perusahaan</a>
-        <span class="text-slate-700">•</span>
-        <a href="privacy-policy.html" class="hover:text-white transition">Kebijakan Privasi</a>
-        <span class="text-slate-700">•</span>
-        <a href="terms-of-service.html" class="hover:text-white transition">Ketentuan Layanan</a>
+        <a href="portal.html" class="hover:text-slate-900 transition">Profil Perusahaan</a>
+        <span class="text-slate-300">•</span>
+        <a href="privacy-policy.html" class="hover:text-slate-900 transition">Kebijakan Privasi</a>
+        <span class="text-slate-300">•</span>
+        <a href="terms-of-service.html" class="hover:text-slate-900 transition">Ketentuan Layanan</a>
       </div>
     </div>
   </footer>
@@ -413,7 +403,6 @@
     // 1. Live Clock (WIB)
     function updateLiveClock() {
       const now = new Date();
-      // Formatter in WIB (UTC+7)
       const options = {
         timeZone: 'Asia/Jakarta',
         hour: '2-digit',
@@ -431,11 +420,9 @@
     updateLiveClock();
 
     // 2. Countdown Timer
-    // Establish target time: end of current maintenance window (persistent for session)
     let targetTimeKey = 'ast_target_maintenance_time';
     let targetEpoch = localStorage.getItem(targetTimeKey);
     if (!targetEpoch || parseInt(targetEpoch) <= Date.now()) {
-      // Set to 4 hours and 30 minutes from now
       targetEpoch = Date.now() + (4 * 3600 + 30 * 60) * 1000;
       localStorage.setItem(targetTimeKey, targetEpoch.toString());
     } else {
@@ -480,7 +467,7 @@
 
       setTimeout(() => {
         metrics.forEach((el) => {
-          const randomLatency = Math.floor(Math.random() * 16) + 16; // 16ms - 31ms
+          const randomLatency = Math.floor(Math.random() * 14) + 16; // 16ms - 29ms
           el.textContent = randomLatency + ' ms';
         });
 
@@ -493,7 +480,7 @@
         icon.classList.remove('animate-spin');
         label.textContent = 'Uji Latensi';
         btn.disabled = false;
-      }, 700);
+      }, 650);
     }
 
     // 4. Notification Email Subscription with LocalStorage Persistence
@@ -507,7 +494,7 @@
         inputGroup.classList.add('hidden');
         successBox.classList.remove('hidden');
         if (emailText) {
-          emailText.innerHTML = 'Notifikasi peluncuran akan otomatis dikirimkan ke: <strong class="text-white font-mono-code">' + escapeHtml(savedEmail) + '</strong>.';
+          emailText.innerHTML = 'Notifikasi peluncuran akan dikirimkan ke: <strong class="text-slate-900 font-mono-code">' + escapeHtml(savedEmail) + '</strong>.';
         }
       }
     }
@@ -533,7 +520,7 @@
       setTimeout(() => {
         localStorage.setItem('ast_maintenance_subscriber', email);
         checkExistingSubscription();
-      }, 600);
+      }, 550);
     }
 
     function resetSubscription() {
@@ -552,7 +539,7 @@
       if (btn) {
         btn.disabled = false;
         btn.innerHTML = `
-          <span>Beri Tahu Saya Saat Siap</span>
+          <span>Daftarkan Email</span>
           <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
           </svg>`;
@@ -567,10 +554,10 @@
         if (tag) {
           const originalText = tag.textContent;
           tag.textContent = '✓ Tersalin!';
-          tag.classList.add('text-brand-400', 'border-brand-500/50', 'bg-brand-500/10');
+          tag.classList.add('text-brand-700', 'border-brand-400', 'bg-brand-50');
           setTimeout(() => {
             tag.textContent = originalText;
-            tag.classList.remove('text-brand-400', 'border-brand-500/50', 'bg-brand-500/10');
+            tag.classList.remove('text-brand-700', 'border-brand-400', 'bg-brand-50');
           }, 2000);
         }
       }).catch(() => {
@@ -594,7 +581,6 @@
       }
     }
 
-    // Helper: Escape HTML
     function escapeHtml(text) {
       const map = {
         '&': '&amp;',
@@ -606,7 +592,6 @@
       return text.replace(/[&<>"']/g, function(m) { return map[m]; });
     }
 
-    // Initialize state on load
     document.addEventListener('DOMContentLoaded', () => {
       checkExistingSubscription();
     });
