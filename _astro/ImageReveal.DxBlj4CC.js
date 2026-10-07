@@ -1,1 +1,0 @@
-import{t as e}from"./jsx-runtime.zpEpnqWL.js";import{t}from"./proxy.mf4pNLLB.js";var n=e();function r({children:e,delay:r=0}){return(0,n.jsx)(t.div,{initial:{opacity:0,scale:.95},whileInView:{opacity:1,scale:1},viewport:{once:!0,margin:`-100px`},transition:{duration:.6,delay:r},className:`overflow-hidden rounded-2xl`,children:e})}export{r as default};
